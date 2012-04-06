@@ -18,4 +18,4 @@ Also uses Vundle, but it's included as a submodule :O
     git submodule update --init
     ./install.sh
 
-This will also download and install all vim modules using Vundle (yipee!)
+This will also download and install all configured vim plugins using Vundle (yipee!)
