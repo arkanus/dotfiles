@@ -34,6 +34,7 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'vim-scripts/The-NERD-tree.git'
 Bundle 'honza/snipmate-snippets'
 Bundle 'robhudson/snipmate_for_django'
+Bundle 'tpope/vim-unimpaired'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
