@@ -2,7 +2,7 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-files="gvimrc vimrc vim"
+files="gitconfig gvimrc vimrc vim"
 
 mkdir -p ~/dotfiles.old
 

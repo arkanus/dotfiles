@@ -1,0 +1,11 @@
+[alias]
+	br = branch
+	co = checkout
+	st = status
+	ci = commit
+	tree = log --graph --oneline --abbrev-commit --decorate
+[user]
+	name = Marcos Sánchez
+	email = marcos.e.sanchez@gmail.com
+[push]
+	default = tracking
