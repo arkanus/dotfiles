@@ -33,9 +33,12 @@ Bundle 'vim-scripts/taglist.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'vim-scripts/The-NERD-tree.git'
 Bundle 'honza/snipmate-snippets'
-Bundle 'robhudson/snipmate_for_django'
+"Bundle 'robhudson/snipmate_for_django'
 Bundle 'tpope/vim-unimpaired'
-
+Bundle 'tpope/vim-surround'
+Bundle 'Townk/vim-autoclose'
+Bundle 'vim-scripts/closetag.vim'
+Bundle 'vim-scripts/AutoTag.git'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" General
@@ -111,23 +114,6 @@ set tags+=~/.vim/tags,~/.vim/tags.php
 autocmd! BufNewFile * silent! 0r ~/.vim/skel/tmpl.%:e
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" Mapeos Útiles
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" cerrar algunas llaves automáticamente y posicionar
-" el cursor al medio
-" !!! REEMPLAZADO POR EL PLUGIN AUTOCLOSE (:h autoclose)
-
-"inoremap () ()<Left>
-"inoremap {} {}<Left>
-"inoremap [] []<Left>
-"inoremap <> <><Left>
-"inoremap "" ""<Left>
-"inoremap '' ''<Left>
-"inoremap {% {%  %}<Left><Left><Left>
-"inoremap {{ {{  }}<Left><Left><Left>
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Activar folding en los XML
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:xml_syntax_folding=1
@@ -192,8 +178,6 @@ let NERDRemoveExtraSpaces=1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocommands varios
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" cargar plugin para cerrar tags html/xml con <CTRL_> (control guión bajo)
-au Filetype xml\|html\|php\|mason :source ~/.vim/macros/closetag.vim
 
 "setear filetypes para usar snippets
 au Filetype htmldjango set ft+=.html.django_template
@@ -268,3 +252,15 @@ let g:protodefprotogetter='/home/marcos/.vim/pullproto.pl'
 "Busca headers en la ruta absoluta pero reemplazando la palabra source por include
 " ej: original home/aa/source/brah -> home/aa/include/brah
 let b:fswitchlocs = 'reg:/source/include/'
+
+"" Ctrl P 
+
+" ignora algunos archivos
+set wildignore+=*.pyc,*.swp,*.jpg,*.png,*.gif
+let g:ctrlp_custom_ignore = {
+	\ 'dir':  '\.git$\|\.hg$\|\.svn$',
+	\ 'file': '\.exe$\|\.so$\|\.dll$',
+	\ 'link': '',
+	\ }
+let g:ctrlp_extensions = ['tag', 'buffertag']
+
