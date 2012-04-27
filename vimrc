@@ -1,16 +1,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Interfaz Gráfica
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-syntax on
-
-"Sacar los menus "despegables" y la barra de herramientas
-set guioptions-=tT
-
-"Esquema de color
 colorscheme desert
-"colorscheme kib_darktango
-"colorscheme darkZ
-"colorscheme wombat
+syntax on
+set nocp " Non compatible with legacy vi editor
 
 "Siempre una barra de estado visible
 set laststatus=2
@@ -39,6 +32,9 @@ Bundle 'tpope/vim-surround'
 Bundle 'Townk/vim-autoclose'
 Bundle 'vim-scripts/closetag.vim'
 Bundle 'vim-scripts/AutoTag.git'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'ciaranm/inkpot'
+Bundle 'tpope/vim-fugitive'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" General
@@ -69,7 +65,7 @@ nmap <S-F3> :NERDTreeMirror<CR>
 
 
 "" Filtros para NERDTree
-let NERDTreeIgnore = ['\.pyc',]
+let NERDTreeIgnore = ['\.pyc','tags']
 
 if &diff
 	" Manejo sencillo de diff
@@ -78,14 +74,14 @@ if &diff
 endif
 
 
-"Aplica plguins según tipo de fichero
+" Applies filetype plugins
 filetype plugin on
 
-"Aplica opciones de indentacion segun el tipo de archivo
+" Aplies indentation options specified in ftplugins
 filetype plugin indent on
 
-" Setear la tecla leader
-"let mapleader = ","
+" Sets an easier to press leader key
+let mapleader = ","
 
 "Syntaxis coloreada
 syntax on
@@ -125,15 +121,6 @@ au BufRead * normal zR
 ""Ajustes del plugin OmniCppComplete
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set nocp
-map <C-F12> :!ctags -R -f ~/.vim/tags --c++-kinds=+p --fields=+iaS --extra=+q --languages=c++,c,php /usr/include /usr/local/include /usr/share/php <CR>
-map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --languages=c++,c . <CR>
-
-map <Leader>h :set invhls <CR>
-
-"" crear tags para todos los lenguajes
-"map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q . <CR>
-
 let OmniCpp_ShowScopeInAbbr = 1
 
 " Opciones para autocompletación
@@ -149,10 +136,10 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 "let $DJANGO_SETTINGS_MODULE = 'settings'
 
 "" SnippetsEmu -- estamos usando django superior a 2
-let django_version = 1
+"let django_version = 1
 
 "" Setear la tecla de code_complete
-let g:completekey = "<S-tab>"
+"let g:completekey = "<S-tab>"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VTreeExplorer: explorador de archivos
@@ -253,14 +240,16 @@ let g:protodefprotogetter='/home/marcos/.vim/pullproto.pl'
 " ej: original home/aa/source/brah -> home/aa/include/brah
 let b:fswitchlocs = 'reg:/source/include/'
 
-"" Ctrl P 
-
-" ignora algunos archivos
+""[ctrlp] Ignores some files
 set wildignore+=*.pyc,*.swp,*.jpg,*.png,*.gif
 let g:ctrlp_custom_ignore = {
-	\ 'dir':  '\.git$\|\.hg$\|\.svn$',
+	\ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$\|log$',
 	\ 'file': '\.exe$\|\.so$\|\.dll$',
 	\ 'link': '',
 	\ }
 let g:ctrlp_extensions = ['tag', 'buffertag']
+
+""[fugitive] Adds git branch to the statusline 
+"set statusline=%{fugitive#statusline()}
+set statusline=%{fugitive#statusline()}\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 

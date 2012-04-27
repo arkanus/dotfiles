@@ -1,1 +1,5 @@
-colorscheme desert
+colorscheme inkpot
+
+" Hide toolbars
+set guioptions-=tT
+
