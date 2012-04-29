@@ -9,3 +9,5 @@
 	email = marcos.e.sanchez@gmail.com
 [push]
 	default = tracking
+[color]
+	ui = true
