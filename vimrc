@@ -35,6 +35,7 @@ Bundle 'vim-scripts/AutoTag.git'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'ciaranm/inkpot'
 Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/syntastic '
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" General
@@ -86,20 +87,11 @@ let mapleader = ","
 "Syntaxis coloreada
 syntax on
 
-"Cambiar automágicamente al directorio del archivo a editar
-"set autochdir
-
 "Identación
 "set expandtab
 set tabstop=4
-
-""Indentado al estilo C
-"set cindent
-
 set shiftwidth=4
-
 set nosmartindent
-"set noexpandtab
 
 set tags+=~/.vim/tags,~/.vim/tags.php
 
@@ -132,31 +124,6 @@ inoremap <C-space> <C-x><C-o>
 "cerrar automágicamente la ventana de preview
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
-""" Variable de entorno para poder autocompletar cosas de django
-"let $DJANGO_SETTINGS_MODULE = 'settings'
-
-"" SnippetsEmu -- estamos usando django superior a 2
-"let django_version = 1
-
-"" Setear la tecla de code_complete
-"let g:completekey = "<S-tab>"
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" VTreeExplorer: explorador de archivos
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" abrir el exlorador en una división vertical
-let treeExplVertical=1
-
-" Expresión regular para archivos ocultos:
-" actualmente:
-" * archivos ocultos (.*.*) --por defecto--
-" * bytecode python (*.pyc)
-let treeExplHidePattern= '^.*\.\(pyc\)$'
-
-" Los directorios van primero en la lista
-let treeExplDirSort=1
-
 " NERDCommenter desactiva los mensajes de error de tipos no soportados
 let NERDShutUp=1
 " Elimina los espacios posteriores a los caracteres de comentario
@@ -166,12 +133,10 @@ let NERDRemoveExtraSpaces=1
 " Autocommands varios
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"setear filetypes para usar snippets
-au Filetype htmldjango set ft+=.html.django_template
-au Filetype python set ft+=.django
-
 "crear tags para los archivos del directorio actual presionando <F12>
 au Filetype python map <F12> :!ctags -R --python-kinds=-i --languages=Python . <CR>
+" Sets django filetype for all pytohn files
+au Filetype python set ft=python.django
 
 " Bad whitespace
 highlight BadWhitespace ctermbg=red guibg=red
