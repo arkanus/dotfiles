@@ -1,9 +1,10 @@
 [alias]
-	br = branch
+	br = branch -v
 	co = checkout
 	st = status
 	ci = commit
 	tree = log --graph --oneline --abbrev-commit --decorate
+	logf = log --name-only
 [user]
 	name = Marcos Sánchez
 	email = marcos.e.sanchez@gmail.com
@@ -11,3 +12,5 @@
 	default = tracking
 [color]
 	ui = true
+[core]
+	excludesfile = /home/marcos/.gitignore_global
