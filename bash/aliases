@@ -1,0 +1,5 @@
+#!bin/sh
+
+## Django stuff
+alias dj="python manage.py"
+alias djr="dj runserver_plus"
