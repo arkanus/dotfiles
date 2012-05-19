@@ -36,6 +36,9 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'ciaranm/inkpot'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic '
+Bundle 'vim-scripts/grep.vim'
+Bundle 'edsono/vim-matchit'
+Bundle 'jmcantrell/vim-virtualenv'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" General
@@ -99,15 +102,8 @@ set tags+=~/.vim/tags,~/.vim/tags.php
 "" Esqueletos para distintos tipos de archivos
 "" 		(se encuentran en ~/.vim/skel/tmpl.<tipo_de_archivo>)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd! BufNewFile * silent! 0r ~/.vim/skel/tmpl.%:e
+"autocmd! BufNewFile * silent! 0r ~/.vim/skel/tmpl.%:e
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" Activar folding en los XML
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:xml_syntax_folding=1
-au FileType xml setlocal foldmethod=syntax
-" Abre todos los folds al abrir un archivo
-au BufRead * normal zR
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""Ajustes del plugin OmniCppComplete
@@ -129,14 +125,34 @@ let NERDShutUp=1
 " Elimina los espacios posteriores a los caracteres de comentario
 let NERDRemoveExtraSpaces=1
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Yummy functions
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Searchs up the dir tree for manage.py and apply htmldjango filetype
+fun! DetectDjango()
+	if findfile('manage.py', expand('%:h').';') != ''
+		set ft=htmldjango.html
+	endif
+	"set ft=htmldjango.html
+endf
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocommands varios
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Activar folding en los XML
+let g:xml_syntax_folding=1
+au FileType xml,html setlocal foldmethod=syntax
+
+" Abre todos los folds al abrir un archivo
+au BufRead * normal zR
 
 "crear tags para los archivos del directorio actual presionando <F12>
 au Filetype python map <F12> :!ctags -R --python-kinds=-i --languages=Python . <CR>
 " Sets django filetype for all pytohn files
 au Filetype python set ft=python.django
+
+au Filetype html exec DetectDjango()
 
 " Bad whitespace
 highlight BadWhitespace ctermbg=red guibg=red
@@ -218,3 +234,7 @@ let g:ctrlp_extensions = ['tag', 'buffertag']
 "set statusline=%{fugitive#statusline()}
 set statusline=%{fugitive#statusline()}\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
+"[Ctrl-P] Only start searching when input stop (in ms)
+let g:ctrlp_lazy_update = 250
+"[Ctrl-P] Max depth to search files
+let g:ctrlp_max_depth = 20
