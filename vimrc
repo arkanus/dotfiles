@@ -39,6 +39,7 @@ Bundle 'scrooloose/syntastic '
 Bundle 'vim-scripts/grep.vim'
 Bundle 'edsono/vim-matchit'
 Bundle 'jmcantrell/vim-virtualenv'
+Bundle 'chriskempson/vim-tomorrow-theme'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" General
@@ -131,10 +132,9 @@ let NERDRemoveExtraSpaces=1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Searchs up the dir tree for manage.py and apply htmldjango filetype
 fun! DetectDjango()
-	if findfile('manage.py', expand('%:h').';') != ''
+	if findfile('manage.py', expand('%:p').';') != ''
 		set ft=htmldjango.html
 	endif
-	"set ft=htmldjango.html
 endf
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -238,3 +238,5 @@ set statusline=%{fugitive#statusline()}\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 let g:ctrlp_lazy_update = 250
 "[Ctrl-P] Max depth to search files
 let g:ctrlp_max_depth = 20
+"[CloseTag] to prevent error messages
+let b:unaryTagsStack = ""
