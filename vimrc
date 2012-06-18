@@ -4,6 +4,7 @@
 colorscheme desert
 syntax on
 set nocp " Non compatible with legacy vi editor
+set autoread "Automatically reload modified files
 
 "Siempre una barra de estado visible
 set laststatus=2
