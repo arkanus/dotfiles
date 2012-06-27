@@ -1,19 +1,22 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General settings for Vim
+"
+" author: Marcos Sánchez
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" Interfaz Gráfica
+"" GUI tweaks
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme desert
 syntax on
 set nocp " Non compatible with legacy vi editor
 set autoread "Automatically reload modified files
 
-"Siempre una barra de estado visible
 set laststatus=2
-
-"Resaltar la línea en que se trabaja
 set cursorline
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vundle: Manejo de paquetes de plugins
+" Vundle: Plugin package management without git externals!
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 filetype off
