@@ -1,3 +1,8 @@
-tags
+# VIM generated stuff
 *.swp
 *.vim
+
+# Exhuberant ctags files
+.tags
+TAGS
+tags
