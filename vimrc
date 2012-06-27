@@ -21,16 +21,13 @@ set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 
 Bundle 'kien/ctrlp.vim'
-"Bundle 'vim-scripts/snippetsEmu'
 Bundle 'vim-scripts/The-NERD-Commenter'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'vim-scripts/The-NERD-tree.git'
 Bundle 'honza/snipmate-snippets'
-"Bundle 'robhudson/snipmate_for_django'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-surround'
-"Bundle 'Townk/vim-autoclose'
 Bundle 'fholgado/vim-autoclose'
 Bundle 'vim-scripts/closetag.vim'
 Bundle 'vim-scripts/AutoTag.git'
