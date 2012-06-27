@@ -1,10 +1,10 @@
 [alias]
 	br = branch -v
 	co = checkout
-	st = status
 	ci = commit
-	tree = log --graph --oneline --abbrev-commit --decorate
+	tree = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
 	logf = log --name-only
+	st = status -sb
 [user]
 	name = Marcos Sánchez
 	email = marcos.e.sanchez@gmail.com
