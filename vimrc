@@ -30,30 +30,36 @@ Bundle 'honza/snipmate-snippets'
 "Bundle 'robhudson/snipmate_for_django'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-surround'
-Bundle 'Townk/vim-autoclose'
+"Bundle 'Townk/vim-autoclose'
+Bundle 'fholgado/vim-autoclose'
 Bundle 'vim-scripts/closetag.vim'
 Bundle 'vim-scripts/AutoTag.git'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'ciaranm/inkpot'
 Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/syntastic '
+Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/grep.vim'
 Bundle 'edsono/vim-matchit'
 Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'groenewege/vim-less'
+Bundle 'xolox/vim-reload'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "no guardar backups (.swp)
-set nobackup
-set nowritebackup
+"set nobackup
+"set nowritebackup
 set history=50
 set showcmd
 set incsearch
 set ignorecase			"ignorar case por defecto
 set smartcase			"Busquedas case sensitive solo si se usan mayusculas
+
+"Only save buffers, tabs, split sizes and current dir on :mksession
+set sessionoptions=buffers,tabpages,winsize,curdir
 
 
 """ Display
@@ -240,4 +246,4 @@ let g:ctrlp_lazy_update = 250
 "[Ctrl-P] Max depth to search files
 let g:ctrlp_max_depth = 20
 "[CloseTag] to prevent error messages
-let b:unaryTagsStack = ""
+let b:unaryTagsStack = []
