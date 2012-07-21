@@ -1,8 +1,13 @@
 # VIM generated stuff
 *.swp
 *.vim
+*.swo
 
 # Exhuberant ctags files
 .tags
 TAGS
 tags
+.ropeproject
+
+# Python compiled files
+*.pyc
