@@ -28,7 +28,7 @@ Bundle 'vim-scripts/The-NERD-Commenter'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'vim-scripts/The-NERD-tree.git'
-Bundle 'honza/snipmate-snippets'
+Bundle 'arkanus/snipmate-snippets'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-surround'
 Bundle 'fholgado/vim-autoclose'
@@ -44,6 +44,9 @@ Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'groenewege/vim-less'
 Bundle 'xolox/vim-reload'
+"Bundle 'fholgado/minibufexpl' "This package is not formated well :/
+Bundle 'klen/python-mode'
+Bundle 'mivok/vimtodo'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" General
@@ -65,7 +68,7 @@ set sessionoptions=buffers,tabpages,winsize,curdir
 """ Display
 set lazyredraw			"No redibujar cuando los script estan ejecutandose
 set scrolloff=3			"Siempre mostrar 3 lineas bajo y sobre el cursor
-set ruler				"Mostar numeros de linea
+"set ruler				"Mostar numeros de linea
 
 """ Command Line
 set wildmenu
@@ -77,7 +80,7 @@ nmap <S-F3> :NERDTreeMirror<CR>
 
 
 "" Filtros para NERDTree
-let NERDTreeIgnore = ['\.pyc','tags']
+let NERDTreeIgnore = ['\.pyc','tags','\.o','\.gch']
 
 if &diff
 	" Manejo sencillo de diff
@@ -123,7 +126,7 @@ let OmniCpp_ShowScopeInAbbr = 1
 set completeopt=preview,menu,menuone,longest
 
 " Control+espacio para autocompletar
-inoremap <C-space> <C-x><C-o>
+"inoremap <C-space> <C-x><C-o>
 
 "cerrar automágicamente la ventana de preview
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
@@ -229,7 +232,7 @@ let g:protodefprotogetter='/home/marcos/.vim/pullproto.pl'
 let b:fswitchlocs = 'reg:/source/include/'
 
 ""[ctrlp] Ignores some files
-set wildignore+=*.pyc,*.swp,*.jpg,*.png,*.gif
+set wildignore+=*.pyc,*.swp,*.jpg,*.png,*.gif,*.o,*.so,*.gch
 let g:ctrlp_custom_ignore = {
 	\ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$\|log$',
 	\ 'file': '\.exe$\|\.so$\|\.dll$',
@@ -247,3 +250,13 @@ let g:ctrlp_lazy_update = 250
 let g:ctrlp_max_depth = 20
 "[CloseTag] to prevent error messages
 let b:unaryTagsStack = []
+
+"python mode dont show error window
+let g:pymode_lint_cwindow = 0
+let g:pymode_lint_write = 0
+"don't add line numbers & other predefined stuff
+let g:pymode_options_other = 0
+"Dont fold python code when opening a file
+let g:pymode_folding = 0
+"Rope vim autoimport some modules
+let g:ropevim_autoimport_modules = ["os.*", "traceback", "django.*", "logging.*"]
