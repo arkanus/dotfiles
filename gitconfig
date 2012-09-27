@@ -3,7 +3,7 @@
 	co = checkout
 	ci = commit
 	tree = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
-	logf = log --name-only
+	logf = log --name-status
 	st = status -sb
 [user]
 	name = Marcos Sánchez
