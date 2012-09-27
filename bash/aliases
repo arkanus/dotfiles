@@ -1,5 +1,9 @@
 #!bin/sh
 
+## List process with pid + command
+alias pso="ps -e -opid,cmd"
+
 ## Django stuff
 alias dj="python manage.py"
-alias djr="dj runserver_plus"
+alias djr="dj runserver"
+alias djrp="dj runserver_plus"
