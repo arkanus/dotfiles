@@ -47,6 +47,7 @@ Bundle 'xolox/vim-reload'
 "Bundle 'fholgado/minibufexpl' "This package is not formated well :/
 Bundle 'klen/python-mode'
 Bundle 'mivok/vimtodo'
+Bundle 'vim-scripts/a.vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" General
@@ -80,7 +81,7 @@ nmap <S-F3> :NERDTreeMirror<CR>
 
 
 "" Filtros para NERDTree
-let NERDTreeIgnore = ['\.pyc','tags','\.o','\.gch']
+let NERDTreeIgnore = ['\.pyc','^tags','\.o','\.gch']
 
 if &diff
 	" Manejo sencillo de diff
@@ -124,6 +125,9 @@ let OmniCpp_ShowScopeInAbbr = 1
 
 " Opciones para autocompletación
 set completeopt=preview,menu,menuone,longest
+
+" Lineas en el popup de omnicomplete
+set pumheight=12
 
 " Control+espacio para autocompletar
 "inoremap <C-space> <C-x><C-o>
