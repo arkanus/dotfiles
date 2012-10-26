@@ -1,2 +1,3 @@
 #For virtualenv projects
 export PROJECT_HOME=~/virtualenv_projects/
+export EDITOR=vim
