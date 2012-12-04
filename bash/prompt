@@ -229,7 +229,7 @@ function set_bash_prompt () {
 
   fi
   # Set the bash prompt variable.
-  PS1="${On_Blue} ${Color_Off} ${BRANCH} ${BIBlue}\w${Color_Off}\n${On_Blue} ${Color_Off}${PYTHON_VIRTUALENV}${JOBS} ${IBlue}\u@\h ${PROMPT_SYMBOL} "
+  PS1="\n${On_Blue} ${Color_Off} ${BRANCH} ${BIBlue}\w${Color_Off}\n${On_Blue} ${Color_Off}${PYTHON_VIRTUALENV}${JOBS} ${IBlue}\u@\h ${PROMPT_SYMBOL} "
 }
 
 # Tell bash to execute this function just before displaying its prompt.
