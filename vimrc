@@ -63,8 +63,9 @@ set incsearch
 set ignorecase			"ignorar case por defecto
 set smartcase			"Busquedas case sensitive solo si se usan mayusculas
 
-"Only save buffers, tabs, split sizes and current dir on :mksession
-set sessionoptions=buffers,tabpages,winsize,curdir
+"Only save tabs, split sizes and current dir on :mksession
+"Excludes hidden buffers 
+set sessionoptions=tabpages,winsize,curdir
 
 
 """ Display
@@ -109,7 +110,7 @@ set tabstop=4
 set shiftwidth=4
 set nosmartindent
 
-set tags+=~/.vim/tags,~/.vim/tags.php
+set tags+=./tags,~/.vim/tags,~/.vim/tags.php
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Esqueletos para distintos tipos de archivos
@@ -201,10 +202,11 @@ let vala_no_tab_space_error = 1
 "let vala_minlines = 120
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mapeos Varios
+" Misc Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 map <Leader>h :set invhls <CR>
+noremap <Leader>t :noautocmd vimgrep /\CTODO/j **/*.py<CR> :cw<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -264,4 +266,6 @@ let g:pymode_options_other = 0
 "Dont fold python code when opening a file
 let g:pymode_folding = 0
 "Rope vim autoimport some modules
-let g:ropevim_autoimport_modules = ["os.*", "traceback", "django.*", "logging.*"]
+let g:ropevim_autoimport_modules = ["os.*", "traceback", "logging", "pdb"]
+"For some reason this doesnt work, but loking at the code, it should
+"let g:pymode_rope_autoimport_modules = ["os", "os.path", "traceback", "logging", "pdb"]
