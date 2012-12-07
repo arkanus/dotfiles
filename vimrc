@@ -49,6 +49,7 @@ Bundle 'vim-scripts/closetag.vim'
 Bundle 'vim-scripts/grep.vim'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'xolox/vim-reload'
+Bundle 'mattn/zencoding-vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" General
@@ -149,7 +150,7 @@ let NERDRemoveExtraSpaces=1
 " Searchs up the dir tree for manage.py and apply htmldjango filetype
 fun! DetectDjango()
 	if findfile('manage.py', expand('%:p').';') != ''
-		set ft=htmldjango.html
+		setlocal ft="htmldjango.html"
 	endif
 endf
 
