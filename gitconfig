@@ -14,3 +14,5 @@
 	ui = true
 [core]
 	excludesfile = /home/marcos/.gitignore_global
+[github]
+	user = arkanus
