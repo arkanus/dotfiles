@@ -52,6 +52,7 @@ Bundle 'xolox/vim-reload'
 Bundle 'mattn/zencoding-vim'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" General
@@ -86,7 +87,7 @@ nmap <S-F3> :NERDTreeMirror<CR>
 
 
 "" Filtros para NERDTree
-let NERDTreeIgnore = ['\.pyc','^tags','\.o','\.gch']
+let NERDTreeIgnore = ['\.pyc','^tags','\.o','\.a','\.gch','^CMakeFiles','^CMakeCache.txt','^cmake_install.cmake']
 
 if &diff
 	" Manejo sencillo de diff
@@ -188,6 +189,9 @@ au BufRead,BufNewFile *.vapi            setfiletype vala
 
 au BufRead,BufNewFile *.glsl setfiletype glsl
 
+" Scons is python!
+au BufRead,BufNewFile SCons* setfiletype python
+
 " Disable valadoc syntax highlight
 "let vala_ignore_valadoc = 1
 
@@ -258,8 +262,6 @@ set statusline=%{fugitive#statusline()}\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 let g:ctrlp_lazy_update = 250
 "[Ctrl-P] Max depth to search files
 let g:ctrlp_max_depth = 20
-"[CloseTag] to prevent error messages
-let b:unaryTagsStack = []
 
 "python mode dont show error window
 let g:pymode_lint_cwindow = 0
@@ -270,5 +272,7 @@ let g:pymode_options_other = 0
 let g:pymode_folding = 0
 "Rope vim autoimport some modules
 let g:ropevim_autoimport_modules = ["os.*", "traceback", "logging", "pdb"]
+"make project dir in current dir (spped up rope)
+let g:rope_guess_project = 0
 "For some reason this doesnt work, but loking at the code, it should
-"let g:pymode_rope_autoimport_modules = ["os", "os.path", "traceback", "logging", "pdb"]
+"let g:pymode_rope_autoimport_modules = ['os', 'os.path', 'traceback', 'logging', 'pdb']
