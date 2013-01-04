@@ -1,3 +1,4 @@
+" vim: set foldmethod=marker foldmarker={{{,}}} foldlevel=0 spell
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General settings for Vim
 "
@@ -61,7 +62,7 @@ Bundle 'mattn/webapi-vim'
 "no guardar backups (.swp)
 "set nobackup
 "set nowritebackup
-set history=50
+set history=1000
 set showcmd
 set incsearch
 set ignorecase			"ignorar case por defecto
@@ -116,12 +117,12 @@ set nosmartindent
 
 set tags+=./tags,~/.vim/tags,~/.vim/tags.php
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" Esqueletos para distintos tipos de archivos
-"" 		(se encuentran en ~/.vim/skel/tmpl.<tipo_de_archivo>)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"autocmd! BufNewFile * silent! 0r ~/.vim/skel/tmpl.%:e
-
+" Enable Persistent Undo {{{
+set undofile
+set undodir=$HOME/.vim/undo
+set undolevels=1000
+set undoreload=10000
+" }}}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""Ajustes del plugin OmniCppComplete
@@ -216,9 +217,7 @@ map <Leader>h :set invhls <CR>
 noremap <Leader>t :noautocmd vimgrep /\CTODO/j **/*.py<CR> :cw<CR>
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Funciones Varias
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Funciones Varias {{{
 
 "" Recargar snippets SnipMate
 function! ReloadSnippets()
@@ -232,6 +231,8 @@ function! ReloadSnippets()
     call ResetSnippets()
     call GetSnippets( g:snippets_dir, &filetype )
 endfunction
+
+"}}}
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
