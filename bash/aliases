@@ -1,5 +1,8 @@
 #!bin/sh
 
+## Colorized ls
+alias ls="ls -G"
+
 ## List process with pid + command
 alias pso="ps -e -opid,cmd"
 
