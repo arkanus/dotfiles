@@ -2,12 +2,13 @@
 	br = branch -v
 	co = checkout
 	ci = commit
+	sh = stash
 	tree = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
 	logf = log --name-status
 	st = status -sb
 [user]
-	name = Marcos Sánchez
-	email = marcos.e.sanchez@gmail.com
+	name = Marcos Sanchez
+	email = marcos@schibsted.cl
 [push]
 	default = tracking
 [color]

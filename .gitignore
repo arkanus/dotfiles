@@ -1,3 +1,5 @@
 *.swp
 *.old
 /vim/sessions
+/bash/git-completion.bash
+/vim/bundle

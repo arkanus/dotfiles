@@ -281,3 +281,6 @@ let g:ropevim_autoimport_modules = ["os.*", "traceback", "logging", "pdb"]
 let g:rope_guess_project = 0
 "For some reason this doesnt work, but loking at the code, it should
 "let g:pymode_rope_autoimport_modules = ['os', 'os.path', 'traceback', 'logging', 'pdb']
+
+
+set encoding=utf8
