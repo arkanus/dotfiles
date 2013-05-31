@@ -68,6 +68,10 @@ set incsearch
 set ignorecase			"ignorar case por defecto
 set smartcase			"Busquedas case sensitive solo si se usan mayusculas
 
+"Wrap stuff
+set wrap
+set linebreak
+
 "Only save tabs, split sizes and current dir on :mksession
 "Excludes hidden buffers 
 set sessionoptions=tabpages,winsize,curdir
