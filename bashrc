@@ -118,3 +118,4 @@ fi
 
 
 set $PATH = $PATH:$HOME/bin
+bind 'set bell-style none'

@@ -1,7 +1,7 @@
 #For virtualenv projects
 export PROJECT_HOME=~/virtualenv_projects/
 export EDITOR=vim
-set PATH=$PATH:~/android-sdk-linux/tools/:~/android-sdk-linux/platform-tools/
+export PATH=$PATH:~/android-sdk-linux/tools/:~/android-sdk-linux/platform-tools/:~/.local/bin
 
 export VIRTUALENVWRAPPER_VIRTUALENV=/opt/local/bin/virtualenv-2.7
 export VIRTUALENVWRAPPER_PYTHON=/opt/local/bin/python2.7
