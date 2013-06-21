@@ -12,9 +12,16 @@ colorscheme desert
 syntax on
 set nocp " Non compatible with legacy vi editor
 set autoread "Automatically reload modified files
+set autoindent
 
 set laststatus=2
 set cursorline
+
+set ttym=xterm2 "make the mouse to work on iterm2 (osx)
+set mouse=a
+
+set visualbell
+set t_vb=
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle: Plugin package management without git externals!
@@ -85,11 +92,6 @@ set scrolloff=3			"Siempre mostrar 3 lineas bajo y sobre el cursor
 """ Command Line
 set wildmenu
 
-""" Mapeos
-nmap <silent> <F11> <Plug>ToggleProject
-nmap <F3> :NERDTreeToggle<CR>
-nmap <S-F3> :NERDTreeMirror<CR>
-
 
 "" Filtros para NERDTree
 let NERDTreeIgnore = ['\.pyc','^tags','\.o','\.a','\.gch','^CMakeFiles','^CMakeCache.txt','^cmake_install.cmake']
@@ -142,6 +144,8 @@ set pumheight=12
 
 " Control+espacio para autocompletar
 "inoremap <C-space> <C-x><C-o>
+nmap  <C-N> :cp<CR>
+nmap  <C-n> :cn<CR>
 
 "cerrar automágicamente la ventana de preview
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
@@ -219,6 +223,11 @@ let vala_no_tab_space_error = 1
 
 map <Leader>h :set invhls <CR>
 noremap <Leader>t :noautocmd vimgrep /\CTODO/j **/*.py<CR> :cw<CR>
+nnoremap <Leader>m :call ToggleMouse()<cr>
+nmap <silent> <F11> <Plug>ToggleProject
+nmap <F3> :NERDTreeToggle<CR>
+nmap <S-F3> :NERDTreeMirror<CR>
+
 
 
 " Funciones Varias {{{
@@ -236,6 +245,15 @@ function! ReloadSnippets()
     call GetSnippets( g:snippets_dir, &filetype )
 endfunction
 
+function! ToggleMouse()
+	if &mouse == 'a'
+		set mouse=
+		echo "Mouse usage disabled"
+	else
+		set mouse=a
+		echo "Mouse usage enabled"
+	endif
+endfunction
 "}}}
 
 
