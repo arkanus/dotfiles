@@ -9,6 +9,7 @@
 "" GUI tweaks
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme desert
+set backspace+=indent,eol,start
 syntax on
 set nocp " Non compatible with legacy vi editor
 set autoread "Automatically reload modified files
