@@ -116,6 +116,10 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+if [ -f /usr/share/doc/git-1.8.2.1/contrib/completion/git-completion.bash ]; then
+	. /usr/share/doc/git-1.8.2.1/contrib/completion/git-completion.bash
+fi
+
 
 set $PATH = $PATH:$HOME/bin
 bind 'set bell-style none'
