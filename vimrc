@@ -48,14 +48,14 @@ Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'vim-scripts/AutoTag.git'
+"Bundle 'vim-scripts/AutoTag.git'
 Bundle 'vim-scripts/OmniCppComplete'
 Bundle 'vim-scripts/The-NERD-Commenter'
 Bundle 'vim-scripts/The-NERD-tree.git'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/closetag.vim'
 Bundle 'vim-scripts/grep.vim'
-Bundle 'vim-scripts/taglist.vim'
+"Bundle 'vim-scripts/taglist.vim'
 Bundle 'xolox/vim-reload'
 Bundle 'mattn/zencoding-vim'
 Bundle 'michaeljsmith/vim-indent-object'
@@ -124,10 +124,12 @@ set nosmartindent
 set tags+=./tags,~/.vim/tags,~/.vim/tags.php
 
 " Enable Persistent Undo {{{
-set undofile
-set undodir=$HOME/.vim/undo
-set undolevels=1000
-set undoreload=10000
+if exists("&undodir")
+	set undofile
+	set undodir=$HOME/.vim/undo
+	set undolevels=1000
+	set undoreload=10000
+endif
 " }}}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
