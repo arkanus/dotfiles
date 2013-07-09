@@ -1,4 +1,4 @@
-" vim: set foldmethod=marker foldmarker={{{,}}} foldlevel=0 spell
+"vim: set foldmethod=marker foldmarker={{{,}}} foldlevel=0 spell
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General settings for Vim
 "
@@ -220,9 +220,7 @@ let vala_no_tab_space_error = 1
 " Minimum lines used for comment syncing (default 50)
 "let vala_minlines = 120
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Misc Mappings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Misc Mappings {{{
 
 map <Leader>h :set invhls <CR>
 noremap <Leader>t :noautocmd vimgrep /\CTODO/j **/*.py<CR> :cw<CR>
@@ -232,8 +230,10 @@ nmap <F3> :NERDTreeToggle<CR>
 nmap <S-F3> :NERDTreeMirror<CR>
 nnoremap tk :tabnext<CR>
 nnoremap tj :tabprev<CR>
+nnoremap cj :cnext<CR>
+nnoremap ck :cprev<CR>
 
-
+" }}}
 
 " Funciones Varias {{{
 
