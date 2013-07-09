@@ -123,3 +123,5 @@ fi
 
 set $PATH = $PATH:$HOME/bin
 bind 'set bell-style none'
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
