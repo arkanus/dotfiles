@@ -1,13 +1,12 @@
 "vim: set foldmethod=marker foldmarker={{{,}}} foldlevel=0 spell
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General settings for Vim
 "
 " author: Marcos Sánchez
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" GUI tweaks
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" GUI tweaks {{
 colorscheme desert
 set backspace+=indent,eol,start
 syntax on
@@ -48,7 +47,7 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
+"Bundle 'tpope/vim-unimpaired'
 "Bundle 'vim-scripts/AutoTag.git'
 Bundle 'vim-scripts/OmniCppComplete'
 Bundle 'vim-scripts/The-NERD-Commenter'
@@ -233,9 +232,7 @@ nnoremap tj :tabprev<CR>
 nnoremap cj :cnext<CR>
 nnoremap ck :cprev<CR>
 
-" }}}
-
-" Funciones Varias {{{
+" Various Functions {{{
 
 "" Recargar snippets SnipMate
 function! ReloadSnippets()
@@ -263,7 +260,7 @@ endfunction
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Configuraciones de Plugins
+" Plugin Configurations
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Ruta de Script para  protodef
@@ -306,4 +303,8 @@ let g:rope_guess_project = 0
 "let g:pymode_rope_autoimport_modules = ['os', 'os.path', 'traceback', 'logging', 'pdb']
 
 
-set encoding=utf8
+"" Syntastic
+
+" include some standard cpp header locations
+let g:syntastic_c_include_dirs=['src', 'src/include']
+let g:syntastic_cpp_include_dirs=['src', 'src/include']
