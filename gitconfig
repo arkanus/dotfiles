@@ -7,8 +7,8 @@
 	logf = log --name-status
 	st = status -sb
 [user]
-	name = Marcos Sanchez
-	email = marcos@schibsted.cl
+	name = Marcos Sánchez
+	email = arkanus@gmail.com
 [push]
 	default = tracking
 [color]
