@@ -1,0 +1,5 @@
+#Name the terminal window/tab like a pro
+
+function title {
+	echo -ne "\0330;"$*"\007"
+}
