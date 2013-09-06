@@ -6,6 +6,7 @@
 	tree = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
 	logf = log --name-status
 	st = status -sb
+	diffc = diff --cached
 [user]
 	name = Marcos Sánchez
 	email = arkanus@gmail.com
@@ -17,3 +18,5 @@
 	excludesfile = /home/marcos/.gitignore_global
 [github]
 	user = arkanus
+[grep]
+	lineNumber = true
