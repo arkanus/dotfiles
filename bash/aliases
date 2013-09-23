@@ -3,6 +3,9 @@
 ## Colorized ls
 alias ls="ls -G"
 
+## Fix key forwarding in stupid screen
+alias fixssh="source ~/fixssh"
+
 ## List process with pid + command
 alias pso="ps -e -opid,cmd"
 
@@ -15,4 +18,4 @@ alias djmg="dj migrate"
 alias djpyc="dj clean_pyc"
 alias epilpsyoff="bind 'set bell-style none'"
 alias epilpsyon="bind 'set bell-style visible'"
-alias db="psql -h /home/marcos/yapo/yapo_cl/pgsql0/data blocketdb"
+alias db='`make rinfo | grep "^psql -"`'
