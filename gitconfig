@@ -3,8 +3,10 @@
 	co = checkout
 	ci = commit
 	sh = stash
+	lg = log --oneline --decorate
 	tree = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
 	logf = log --name-status
+	logu = log @{u}..
 	st = status -sb
 	diffc = diff --cached
 [user]
