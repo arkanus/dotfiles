@@ -23,6 +23,9 @@ set mouse=a
 set visualbell
 set t_vb=
 
+"Avoid wait on the <ESC>O key combination
+set ttimeoutlen=500
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle: Plugin package management without git externals!
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
