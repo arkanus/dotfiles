@@ -19,3 +19,5 @@ alias djpyc="dj clean_pyc"
 alias epilpsyoff="bind 'set bell-style none'"
 alias epilpsyon="bind 'set bell-style visible'"
 alias db='`make rinfo | grep "^psql -"`'
+
+alias sake="make -s"
