@@ -226,8 +226,6 @@ nnoremap <Leader>m :call ToggleMouse()<cr>
 nmap <silent> <F11> <Plug>ToggleProject
 nmap <F3> :NERDTreeToggle<CR>
 nmap <S-F3> :NERDTreeMirror<CR>
-nnoremap tk :tabnext<CR>
-nnoremap tj :tabprev<CR>
 nnoremap cj :cnext<CR>
 nnoremap ck :cprev<CR>
 
