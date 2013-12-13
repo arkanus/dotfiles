@@ -7,7 +7,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "" GUI tweaks {{
-colorscheme desert
 set backspace+=indent,eol,start
 syntax on
 set nocp " Non compatible with legacy vi editor
@@ -65,6 +64,7 @@ Bundle 'mattn/webapi-vim'
 "" General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+colorscheme Tomorrow-Night
 "no guardar backups (.swp)
 "set nobackup
 "set nowritebackup
