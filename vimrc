@@ -224,6 +224,7 @@ map <Leader>h :set invhls <CR>
 noremap <Leader>t :noautocmd vimgrep /\CTODO/j **/*.py<CR> :cw<CR>
 nnoremap <Leader>m :call ToggleMouse()<cr>
 nmap <silent> <F11> <Plug>ToggleProject
+nmap <silent> <Leader>c :AutoCloseToggle<cr>
 nmap <F3> :NERDTreeToggle<CR>
 nmap <S-F3> :NERDTreeMirror<CR>
 nnoremap cj :cnext<CR>
