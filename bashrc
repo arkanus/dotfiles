@@ -121,7 +121,7 @@ if [ -f /usr/share/doc/git-1.8.2.1/contrib/completion/git-completion.bash ]; the
 fi
 
 
-set $PATH = $PATH:$HOME/bin
+set $PATH = $PATH:$HOME/bin:$HOME/.local/bin
 bind 'set bell-style none'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
