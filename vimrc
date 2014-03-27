@@ -1,4 +1,4 @@
-"vim: set foldmethod=marker foldmarker={{{,}}} foldlevel=0 spell
+"vim: set foldmethod=marker foldmarker={{,}} foldlevel=0 spell
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General settings for Vim
@@ -25,6 +25,8 @@ set t_vb=
 "Avoid wait on the <ESC>O key combination
 set ttimeoutlen=500
 
+set modeline
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle: Plugin package management without git externals!
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -50,7 +52,6 @@ Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/OmniCppComplete'
-Bundle 'vim-scripts/The-NERD-Commenter'
 Bundle 'vim-scripts/The-NERD-tree.git'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/closetag.vim'
@@ -59,6 +60,7 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
+Bundle 'tomtom/tcomment_vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" General
@@ -145,8 +147,8 @@ set pumheight=12
 
 " Control+espacio para autocompletar
 "inoremap <C-space> <C-x><C-o>
-nmap  <C-N> :cp<CR>
-nmap  <C-n> :cn<CR>
+nmap  <C-k> :cp<CR>
+nmap  <C-j> :cn<CR>
 
 "cerrar automágicamente la ventana de preview
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
@@ -191,13 +193,14 @@ au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 " Make trailing whitespace be flagged as bad.
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
-"" Settings para Vala
+" File type extensions {{
 autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
 autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-au BufRead,BufNewFile *.vala            setfiletype vala
-au BufRead,BufNewFile *.vapi            setfiletype vala
-
+au BufRead,BufNewFile *.vala setfiletype vala
+au BufRead,BufNewFile *.vapi setfiletype vala
 au BufRead,BufNewFile *.glsl setfiletype glsl
+au BufRead,BufNewFile *.md setfiletype markdown
+" }}
 
 " Scons is python!
 au BufRead,BufNewFile SCons* setfiletype python
