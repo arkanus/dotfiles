@@ -7,10 +7,8 @@ files="gitconfig gvimrc vimrc vim bash bashrc gitignore_global tmux.conf"
 mkdir -p ~/dotfiles.old
 
 for file in $files; do
-	if [ -d $file ]; then
-		cp ~/.$file ~/dotfiles.old/
-		ln -s $DIR/$file ~/.$file
-	fi
+	mv ~/.$file ~/dotfiles.old/
+	ln -s $DIR/$file ~/.$file
 done
 
 #Installs the bundles configured in .vimr using Vundle
