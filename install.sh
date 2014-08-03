@@ -2,7 +2,7 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-files="gitconfig gvimrc vimrc vim bash bashrc gitignore_global tmux.conf"
+files="gitconfig gvimrc vimrc vim bash bashrc gitignore_global tmux.conf zshrc"
 
 mkdir -p ~/dotfiles.old
 
