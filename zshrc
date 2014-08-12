@@ -5,7 +5,11 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="eastwood"
+if echo $LANG | grep UTF-8 &> /dev/null; then
+	ZSH_THEME="robbyrussell"
+else
+	ZSH_THEME="eastwood"
+fi
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -45,7 +49,7 @@ ZSH_THEME="eastwood"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux)
+plugins=(git tmux vi-mode virtualenv virtualenvwrapper django)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -78,6 +82,9 @@ export PATH="/home/marcos/bin:/home/marcos/.local/bin:/home/marcos/bin:/home/mar
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# Lines configured by zsh-newuser-install
+
 setopt appendhistory
-# End of lines configured by zsh-newuser-install
+
+# Jump words with Ctrl+arrows
+bindkey '^[[1;5C' emacs-forward-word
+bindkey '^[[1;5D' emacs-backward-word
