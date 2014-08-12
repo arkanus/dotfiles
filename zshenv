@@ -2,6 +2,8 @@
 
 export ZSH_TMUX_AUTOCONNECT=true
 
+export EDITOR=vim
+
 SOCK="/tmp/ssh-agent-$USER-screen"
 if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
 then
@@ -36,3 +38,8 @@ alias db='`make rinfo | grep "^psql -"`'
 alias sake="make -s"
 
 ## }}}
+
+if [[ -a $HOME/.zshenv_local ]]
+then
+	source $HOME/.zshenv_local
+fi
