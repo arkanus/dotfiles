@@ -8,7 +8,7 @@ export ZSH=$HOME/.oh-my-zsh
 if echo $LANG | grep UTF-8 &> /dev/null; then
 	ZSH_THEME="robbyrussell"
 else
-	ZSH_THEME="eastwood"
+	ZSH_THEME="daveverwer"
 fi
 
 # Uncomment the following line to use case-sensitive completion.
