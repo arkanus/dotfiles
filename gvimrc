@@ -3,9 +3,9 @@
 "
 " author: Marcos Sánchez
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme inkpot
-colorscheme Tomorrow-Night-Bright
-set guifont=Ubuntu\ Mono\ 11
+colorscheme molokai
+set guifont=Ubuntu\ Mono\ 12
+set novisualbell
 
 " Hide toolbars
 set guioptions-=tT

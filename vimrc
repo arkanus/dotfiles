@@ -36,6 +36,7 @@ set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 
 "Bundle 'fholgado/minibufexpl' "This package is not formated well :/
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'arkanus/snipmate-snippets'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'ciaranm/inkpot'
@@ -53,6 +54,7 @@ Bundle 'mivok/vimtodo'
 Bundle 'msanders/snipmate.vim'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'scrooloose/syntastic'
+Bundle 'tomasr/molokai'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
