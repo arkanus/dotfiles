@@ -228,6 +228,7 @@ let vala_no_tab_space_error = 1
 map <Leader>h :set invhls <CR>
 noremap <Leader>t :noautocmd vimgrep /\CTODO/j **/*.py<CR> :cw<CR>
 nnoremap <Leader>m :call ToggleMouse()<cr>
+nnoremap <Leader>p :set paste!<cr>
 nmap <silent> <F11> <Plug>ToggleProject
 nmap <silent> <Leader>c :AutoCloseToggle<cr>
 nmap <F3> :NERDTreeToggle<CR>
@@ -290,6 +291,8 @@ set statusline=%{fugitive#statusline()}\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 let g:ctrlp_lazy_update = 250
 "[Ctrl-P] Max depth to search files
 let g:ctrlp_max_depth = 20
+"[Ctrl-P] Disable max number of file to index
+let g:ctrlp_max_files = 0
 
 "python mode dont show error window
 let g:pymode_lint_cwindow = 0
