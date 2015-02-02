@@ -43,3 +43,7 @@ if [[ -a $HOME/.zshenv_local ]]
 then
 	source $HOME/.zshenv_local
 fi
+
+echo $PATH
+path=(/opt/local/bin/ $path)
+echo $PATH

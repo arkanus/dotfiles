@@ -5,6 +5,9 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
+
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
 if echo $LANG | grep UTF-8 &> /dev/null; then
 	ZSH_THEME="robbyrussell"
 else
@@ -49,17 +52,13 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux virtualenv virtualenvwrapper django)
+plugins=(git django)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/home/marcos/bin:/home/marcos/.local/bin:/home/marcos/bin:/home/marcos/.local/bin:/usr/local/rvm/gems/ruby-2.0.0-p451/bin:/usr/local/rvm/gems/ruby-2.0.0-p451@global/bin:/usr/local/rvm/rubies/ruby-2.0.0-p451/bin:/usr/lib64/ccache:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/rvm/bin:/opt/scmcoord_contrib/bin:/home/marcos/android-sdk-linux/tools/:/home/marcos/android-sdk-linux/platform-tools/:/home/marcos/.local/bin:/home/marcos/android-sdk-linux/tools/:/home/marcos/android-sdk-linux/platform-tools/:/home/marcos/.local/bin:/home/marcos/.rvm/bin:/home/marcos/bin:/home/marcos/android-sdk-linux/tools/:/home/marcos/android-sdk-linux/platform-tools/:/home/marcos/.local/bin:/home/marcos/android-sdk-linux/tools/:/home/marcos/android-sdk-linux/platform-tools/:/home/marcos/.local/bin:/home/marcos/.rvm/bin:/home/marcos/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
