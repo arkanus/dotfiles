@@ -63,12 +63,12 @@ Bundle 'vim-scripts/The-NERD-tree.git'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/closetag.vim'
 Bundle 'vim-scripts/grep.vim'
-
+Bundle 'ekalinin/Dockerfile.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-colorscheme Tomorrow-Night
+colorscheme molokai
 "no guardar backups (.swp)
 "set nobackup
 "set nowritebackup
