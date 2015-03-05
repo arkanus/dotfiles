@@ -51,3 +51,6 @@ path=(/opt/local/bin/ $path /opt/local/Library/Frameworks/Python.framework/Versi
 export DOCKER_HOST=tcp://boot2docker:2376
 export DOCKER_CERT_PATH=/Users/marcos/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
+
+#required for octave plot commands, otherwise it segfaults
+export LIBGL_ALWAYS_INDIRECT=y
