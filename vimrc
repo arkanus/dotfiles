@@ -1,4 +1,4 @@
-"vim: set foldmethod=marker foldmarker={{,}} foldlevel=0 spell
+" vim:fdm=marker foldmarker={{,}} foldlevel=0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General settings for Vim
@@ -7,6 +7,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "" GUI tweaks {{
+colorscheme elflord
 set backspace+=indent,eol,start
 syntax on
 set nocp " Non compatible with legacy vi editor
@@ -26,16 +27,14 @@ set t_vb=
 set ttimeoutlen=500
 
 set modeline
+""" }}}
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vundle: Plugin package management without git externals!
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vundle: Plugin package management without git externals! {{
 set nocompatible
 filetype off
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 
-"Bundle 'fholgado/minibufexpl' "This package is not formated well :/
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'arkanus/snipmate-snippets'
 Bundle 'chriskempson/vim-tomorrow-theme'
@@ -65,12 +64,10 @@ Bundle 'vim-scripts/closetag.vim'
 Bundle 'vim-scripts/grep.vim'
 Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'fatih/vim-go'
+""" }}
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" General
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" General {{
 
-colorscheme molokai
 "no guardar backups (.swp)
 "set nobackup
 "set nowritebackup
@@ -96,6 +93,8 @@ set scrolloff=3			"Siempre mostrar 3 lineas bajo y sobre el cursor
 
 """ Command Line
 set wildmenu
+
+" }}
 
 
 "" Filtros para NERDTree
@@ -180,7 +179,7 @@ endf
 let g:xml_syntax_folding=1
 au FileType xml,html setlocal foldmethod=syntax
 
-" Abre todos los folds al abrir un archivo
+"Abre todos los folds al abrir un archivo
 au BufRead * normal zR
 
 "crear tags para los archivos del directorio actual presionando <F12>
