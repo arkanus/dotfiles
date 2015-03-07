@@ -14,27 +14,21 @@ set autoread "Automatically reload modified files
 set autoindent
 " Read modelines
 set modelines=1
-
 set laststatus=2
 set cursorline
-
 set ttym=xterm2 "make the mouse to work on iterm2 (osx)
 set mouse=a
-
 set visualbell
 set t_vb=
-
 "Avoid wait on the <ESC>O key combination
 set ttimeoutlen=500
-
-""" }}}
+" }}
 
 " Vundle: Plugin package management without git externals! {{
 set nocompatible
 filetype off
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
-
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'arkanus/snipmate-snippets'
 Bundle 'chriskempson/vim-tomorrow-theme'
@@ -64,10 +58,9 @@ Bundle 'vim-scripts/closetag.vim'
 Bundle 'vim-scripts/grep.vim'
 Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'fatih/vim-go'
-""" }}
+" }}
 
 " General {{
-
 "no guardar backups (.swp)
 "set nobackup
 "set nowritebackup
@@ -76,46 +69,33 @@ set showcmd
 set incsearch
 set ignorecase			"ignorar case por defecto
 set smartcase			"Busquedas case sensitive solo si se usan mayusculas
-
 "Wrap stuff
 set wrap
 set linebreak
-
 "Only save tabs, split sizes and current dir on :mksession
-"Excludes hidden buffers 
+"Excludes hidden buffers
 set sessionoptions=tabpages,winsize,curdir
-
-
 set lazyredraw			"No redibujar cuando los script estan ejecutandose
 set scrolloff=3			"Siempre mostrar 3 lineas bajo y sobre el cursor
 "set ruler				"Mostar numeros de linea
-
 set wildmenu
-
 " Applies filetype plugins
 filetype plugin on
-
 " Aplies indentation options specified in ftplugins
 filetype plugin indent on
-
 " Sets an easier to press leader key
 let mapleader = ","
-
 "Syntaxis coloreada
 syntax on
-
 "Identación
 "set expandtab
 set tabstop=4
 set shiftwidth=4
 set nosmartindent
-
 " Load these files for tag find/completion
 set tags+=./tags,~/.vim/tags,~/.vim/tags.php
-
 " Prefer vertical splits for diffs
 set diffopt+=vertical
-
 " Hightlight trailing whitespaces on lines
 highlight BadWhitespace ctermbg=red guibg=red
 " }}
@@ -142,28 +122,23 @@ if &diff
 endif
 " }}
 
-" Enable Persistent Undo {{{
+" Enable Persistent Undo {{
 if exists("&undodir")
 	set undofile
 	set undodir=$HOME/.vim/undo
 	set undolevels=1000
 	set undoreload=10000
 endif
-" }}}
+" }}
 
 " OmniCppComplete {{
-
 let OmniCpp_ShowScopeInAbbr = 1
-
 " Opciones para autocompletación
 set completeopt=preview,menu,menuone,longest
-
 " Lineas en el popup de omnicomplete
 set pumheight=12
-
 "cerrar automágicamente la ventana de preview
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-
 " }}
 
 " NERDCommenter {{
@@ -199,7 +174,7 @@ au BufRead,BufNewFile SCons* setfiletype python
 
 "}}
 
-" Various Functions {{{
+" Various Functions {{
 
 "" Recargar snippets SnipMate
 function! ReloadSnippets()
@@ -223,21 +198,10 @@ function! ToggleMouse()
 		echo "Mouse usage enabled"
 	endif
 endfunction
-"}}}
+"}}
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin Configurations
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Ruta de Script para  protodef
-let g:protodefprotogetter='/home/marcos/.vim/pullproto.pl'
-
-"Busca headers en la ruta absoluta pero reemplazando la palabra source por include
-" ej: original home/aa/source/brah -> home/aa/include/brah
-let b:fswitchlocs = 'reg:/source/include/'
-
-""[ctrlp] Ignores some files
+" CtrlP {{
+" Ignore some files
 set wildignore+=*.pyc,*.swp,*.jpg,*.png,*.gif,*.o,*.so,*.gch
 let g:ctrlp_custom_ignore = {
 	\ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$\|log$\|ninja_build$\|regress_final$',
@@ -245,18 +209,21 @@ let g:ctrlp_custom_ignore = {
 	\ 'link': '',
 	\ }
 let g:ctrlp_extensions = ['tag', 'buffertag']
+" Only start searching when input stop (in ms)
+let g:ctrlp_lazy_update = 250
+" Max depth to search files
+let g:ctrlp_max_depth = 20
+" Disable max number of file to index
+let g:ctrlp_max_files = 0
+" }}
 
-""[fugitive] Adds git branch to the statusline 
+" Fugitive {{
+" Adds git branch to the statusline
 "set statusline=%{fugitive#statusline()}
 set statusline=%{fugitive#statusline()}\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+" }}
 
-"[Ctrl-P] Only start searching when input stop (in ms)
-let g:ctrlp_lazy_update = 250
-"[Ctrl-P] Max depth to search files
-let g:ctrlp_max_depth = 20
-"[Ctrl-P] Disable max number of file to index
-let g:ctrlp_max_files = 0
-
+" Pymode {{
 "python mode dont show error window
 let g:pymode_lint_cwindow = 0
 let g:pymode_lint_write = 0
@@ -271,10 +238,10 @@ let g:pymode_rope_guess_project = 0
 let g:pymode_rope_autoimport_generate = 0
 " let g:pymode_rope_lookup_project = 0
 " let g:pymode_rope = 0
+" }}
 
-
-"" Syntastic
-
+" Syntastic {{
 " include some standard cpp header locations
 let g:syntastic_c_include_dirs=['src', 'src/include']
 let g:syntastic_cpp_include_dirs=['src', 'src/include']
+" }}
