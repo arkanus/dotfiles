@@ -54,6 +54,11 @@ fi
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git django docker virtualenvwrapper)
 
+if [[ `uname` == 'Darwin' ]]
+then
+	plugins+=(brew)
+fi
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
