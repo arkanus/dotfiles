@@ -135,17 +135,12 @@ nmap <silent> <Leader>c :AutoCloseToggle<cr>
 " Toggle NERDTree file explorer split
 nmap <F3> :NERDTreeToggle<CR>
 nmap <S-F3> :NERDTreeMirror<CR>
-
 " Easy diff lines put/get
 if &diff
 	vnoremap < :diffget<CR>
 	vnoremap > :diffput<CR>
 endif
-
 " }}
-
-
-
 
 " Enable Persistent Undo {{{
 if exists("&undodir")
@@ -183,17 +178,6 @@ let NERDTreeIgnore = ['\.pyc','^tags','\.o','\.a','\.gch','^CMakeFiles','^CMakeC
 
 " }}
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Yummy functions
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Searchs up the dir tree for manage.py and apply htmldjango filetype
-fun! DetectDjango()
-	if findfile('manage.py', expand('%:p').';') != ''
-		setlocal ft=htmldjango.html
-	endif
-endf
-
 " Autocommands {{
 " Use folding on XMLs
 let g:xml_syntax_folding=1
@@ -204,10 +188,6 @@ au BufRead * normal zR
 
 "crear tags para los archivos del directorio actual presionando <F12>
 au Filetype python map <F12> :!ctags -R --python-kinds=-i --languages=Python . <CR>
-" Sets django filetype for all pytohn files
-au Filetype python set ft=python.django
-
-au Filetype html exec DetectDjango()
 
 " Display tabs at the beginning of a line in Python mode as bad.
 au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
