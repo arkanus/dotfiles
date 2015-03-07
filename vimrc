@@ -219,17 +219,6 @@ au BufRead,BufNewFile SCons* setfiletype python
 
 "}}
 
-" Highlight space errors
-"let vala_space_errors = 1
-" Disable trailing space errors
-"let vala_no_trail_space_error = 1
-" Disable space-tab-space errors
-let vala_no_tab_space_error = 1
-
-" Minimum lines used for comment syncing (default 50)
-"let vala_minlines = 120
-
-
 " Various Functions {{{
 
 "" Recargar snippets SnipMate
