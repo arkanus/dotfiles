@@ -46,7 +46,7 @@ if [ -x /usr/libexec/path_helper ]; then
 	eval `/usr/libexec/path_helper -s`
 fi
 
-path=(/opt/local/bin/ $path /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin)
+path=(/opt/local/bin $path /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin)
 
 export DOCKER_HOST=tcp://boot2docker:2376
 export DOCKER_CERT_PATH=/Users/marcos/.boot2docker/certs/boot2docker-vm
