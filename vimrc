@@ -27,7 +27,6 @@ set t_vb=
 "Avoid wait on the <ESC>O key combination
 set ttimeoutlen=500
 
-set modeline
 """ }}}
 
 " Vundle: Plugin package management without git externals! {{
@@ -87,14 +86,38 @@ set linebreak
 set sessionoptions=tabpages,winsize,curdir
 
 
-""" Display
 set lazyredraw			"No redibujar cuando los script estan ejecutandose
 set scrolloff=3			"Siempre mostrar 3 lineas bajo y sobre el cursor
 "set ruler				"Mostar numeros de linea
 
-""" Command Line
 set wildmenu
 
+" Applies filetype plugins
+filetype plugin on
+
+" Aplies indentation options specified in ftplugins
+filetype plugin indent on
+
+" Sets an easier to press leader key
+let mapleader = ","
+
+"Syntaxis coloreada
+syntax on
+
+"Identación
+"set expandtab
+set tabstop=4
+set shiftwidth=4
+set nosmartindent
+
+" Load these files for tag find/completion
+set tags+=./tags,~/.vim/tags,~/.vim/tags.php
+
+" Prefer vertical splits for diffs
+set diffopt+=vertical
+
+" Hightlight trailing whitespaces on lines
+highlight BadWhitespace ctermbg=red guibg=red
 " }}
 
 " Keyboard Mappings {{
@@ -121,31 +144,8 @@ endif
 
 " }}
 
-"" Filtros para NERDTree
-let NERDTreeIgnore = ['\.pyc','^tags','\.o','\.a','\.gch','^CMakeFiles','^CMakeCache.txt','^cmake_install.cmake']
-
-set diffopt+=vertical
 
 
-" Applies filetype plugins
-filetype plugin on
-
-" Aplies indentation options specified in ftplugins
-filetype plugin indent on
-
-" Sets an easier to press leader key
-let mapleader = ","
-
-"Syntaxis coloreada
-syntax on
-
-"Identación
-"set expandtab
-set tabstop=4
-set shiftwidth=4
-set nosmartindent
-
-set tags+=./tags,~/.vim/tags,~/.vim/tags.php
 
 " Enable Persistent Undo {{{
 if exists("&undodir")
@@ -171,10 +171,17 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
 " }}
 
+" NERDCommenter {{
 " NERDCommenter desactiva los mensajes de error de tipos no soportados
 let NERDShutUp=1
 " Elimina los espacios posteriores a los caracteres de comentario
 let NERDRemoveExtraSpaces=1
+"}}
+" NERDTree {{
+" Ignore these files
+let NERDTreeIgnore = ['\.pyc','^tags','\.o','\.a','\.gch','^CMakeFiles','^CMakeCache.txt','^cmake_install.cmake']
+
+" }}
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -187,10 +194,8 @@ fun! DetectDjango()
 	endif
 endf
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Autocommands varios
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" Activar folding en los XML
+" Autocommands {{
+" Use folding on XMLs
 let g:xml_syntax_folding=1
 au FileType xml,html setlocal foldmethod=syntax
 
@@ -204,8 +209,6 @@ au Filetype python set ft=python.django
 
 au Filetype html exec DetectDjango()
 
-" Bad whitespace
-highlight BadWhitespace ctermbg=red guibg=red
 " Display tabs at the beginning of a line in Python mode as bad.
 au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 " Make trailing whitespace be flagged as bad.
@@ -213,6 +216,8 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " Scons is python!
 au BufRead,BufNewFile SCons* setfiletype python
+
+"}}
 
 " Highlight space errors
 "let vala_space_errors = 1
