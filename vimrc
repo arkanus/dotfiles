@@ -1,4 +1,4 @@
-" vim:fdm=marker foldmarker={{,}} foldlevel=0
+" vim: fdm=marker foldmarker={{,}} foldlevel=0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General settings for Vim
@@ -6,13 +6,14 @@
 " author: Marcos Sánchez
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"" GUI tweaks {{
+" GUI tweaks {{
 colorscheme elflord
-set backspace+=indent,eol,start
+" set backspace+=indent,eol,start
 syntax on
-set nocp " Non compatible with legacy vi editor
 set autoread "Automatically reload modified files
 set autoindent
+" Read modelines
+set modelines=1
 
 set laststatus=2
 set cursorline
@@ -66,7 +67,7 @@ Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'fatih/vim-go'
 """ }}
 
-"" General {{
+" General {{
 
 "no guardar backups (.swp)
 "set nobackup
@@ -96,15 +97,34 @@ set wildmenu
 
 " }}
 
+" Keyboard Mappings {{
+" Next/Prev quickfix mappings
+nmap  <C-k> :cp<CR>
+nmap  <C-j> :cn<CR>
+" Toggle search result highlighting
+map <Leader>h :set invhls <CR>
+" Toggle mouse input (useful for terminal emulator copy/paste)
+nnoremap <Leader>m :call ToggleMouse()<cr>
+" Toggle paste mode (useful for terminal emulator copy/paste)
+nnoremap <Leader>p :set paste!<cr>
+" Toggle autoclose plugin
+nmap <silent> <Leader>c :AutoCloseToggle<cr>
+" Toggle NERDTree file explorer split
+nmap <F3> :NERDTreeToggle<CR>
+nmap <S-F3> :NERDTreeMirror<CR>
+
+" Easy diff lines put/get
+if &diff
+	vnoremap < :diffget<CR>
+	vnoremap > :diffput<CR>
+endif
+
+" }}
 
 "" Filtros para NERDTree
 let NERDTreeIgnore = ['\.pyc','^tags','\.o','\.a','\.gch','^CMakeFiles','^CMakeCache.txt','^cmake_install.cmake']
 
-if &diff
-	" Manejo sencillo de diff
-	vnoremap < :diffget<CR>
-	vnoremap > :diffput<CR>
-endif
+set diffopt+=vertical
 
 
 " Applies filetype plugins
@@ -136,9 +156,7 @@ if exists("&undodir")
 endif
 " }}}
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""Ajustes del plugin OmniCppComplete
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" OmniCppComplete {{
 
 let OmniCpp_ShowScopeInAbbr = 1
 
@@ -148,13 +166,10 @@ set completeopt=preview,menu,menuone,longest
 " Lineas en el popup de omnicomplete
 set pumheight=12
 
-" Control+espacio para autocompletar
-"inoremap <C-space> <C-x><C-o>
-nmap  <C-k> :cp<CR>
-nmap  <C-j> :cn<CR>
-
 "cerrar automágicamente la ventana de preview
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+
+" }}
 
 " NERDCommenter desactiva los mensajes de error de tipos no soportados
 let NERDShutUp=1
@@ -196,23 +211,8 @@ au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 " Make trailing whitespace be flagged as bad.
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
-" File type extensions {{
-autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-au BufRead,BufNewFile *.vala setfiletype vala
-au BufRead,BufNewFile *.vapi setfiletype vala
-au BufRead,BufNewFile *.glsl setfiletype glsl
-au BufRead,BufNewFile *.md setfiletype markdown
-" }}
-
 " Scons is python!
 au BufRead,BufNewFile SCons* setfiletype python
-
-" Disable valadoc syntax highlight
-"let vala_ignore_valadoc = 1
-
-" Enable comment strings
-let vala_comment_strings = 1
 
 " Highlight space errors
 "let vala_space_errors = 1
@@ -224,18 +224,6 @@ let vala_no_tab_space_error = 1
 " Minimum lines used for comment syncing (default 50)
 "let vala_minlines = 120
 
-" Misc Mappings {{{
-
-map <Leader>h :set invhls <CR>
-noremap <Leader>t :noautocmd vimgrep /\CTODO/j **/*.py<CR> :cw<CR>
-nnoremap <Leader>m :call ToggleMouse()<cr>
-nnoremap <Leader>p :set paste!<cr>
-nmap <silent> <F11> <Plug>ToggleProject
-nmap <silent> <Leader>c :AutoCloseToggle<cr>
-nmap <F3> :NERDTreeToggle<CR>
-nmap <S-F3> :NERDTreeMirror<CR>
-nnoremap cj :cnext<CR>
-nnoremap ck :cprev<CR>
 
 " Various Functions {{{
 
@@ -303,11 +291,12 @@ let g:pymode_options_other = 0
 "Dont fold python code when opening a file
 let g:pymode_folding = 0
 "Rope vim autoimport some modules
-let g:ropevim_autoimport_modules = ["os.*", "traceback", "logging", "pdb"]
-"make project dir in current dir (spped up rope)
-let g:rope_guess_project = 0
+let g:pymode_rope_guess_project = 0
 "For some reason this doesnt work, but loking at the code, it should
 "let g:pymode_rope_autoimport_modules = ['os', 'os.path', 'traceback', 'logging', 'pdb']
+let g:pymode_rope_autoimport_generate = 0
+" let g:pymode_rope_lookup_project = 0
+" let g:pymode_rope = 0
 
 
 "" Syntastic
