@@ -6,24 +6,6 @@
 " author: Marcos Sánchez
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" GUI tweaks {{
-colorscheme elflord
-" set backspace+=indent,eol,start
-syntax on
-set autoread "Automatically reload modified files
-set autoindent
-" Read modelines
-set modelines=1
-set laststatus=2
-set cursorline
-set ttym=xterm2 "make the mouse to work on iterm2 (osx)
-set mouse=a
-set visualbell
-set t_vb=
-"Avoid wait on the <ESC>O key combination
-set ttimeoutlen=500
-" }}
-
 " Vundle: Plugin package management without git externals! {{
 set nocompatible
 filetype off
@@ -58,6 +40,28 @@ Bundle 'vim-scripts/closetag.vim'
 Bundle 'vim-scripts/grep.vim'
 Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'fatih/vim-go'
+" }}
+
+" GUI tweaks {{
+if $TERM =~ '256color'
+	colorscheme molokai
+else
+	colorscheme elflord
+endif
+" set backspace+=indent,eol,start
+syntax on
+set autoread "Automatically reload modified files
+set autoindent
+" Read modelines
+set modelines=1
+set laststatus=2
+set cursorline
+set ttym=xterm2 "make the mouse to work on iterm2 (osx)
+set mouse=a
+set visualbell
+set t_vb=
+"Avoid wait on the <ESC>O key combination
+set ttimeoutlen=200
 " }}
 
 " General {{
