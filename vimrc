@@ -120,6 +120,8 @@ if &diff
 	vnoremap < :diffget<CR>
 	vnoremap > :diffput<CR>
 endif
+" comma to times for autocompletion
+inoremap <Leader>, <C-x><C-o>
 " }}
 
 " Enable Persistent Undo {{
