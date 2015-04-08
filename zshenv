@@ -31,6 +31,9 @@ alias djpyc="dj clean_pyc"
 alias epilpsyoff="bind 'set bell-style none'"
 alias epilpsyon="bind 'set bell-style visible'"
 alias db='`make rinfo | grep "^psql -"`'
+alias docker-clean-images="docker rmi \$(docker images|grep '^<none>'|awk '{print\$3}')"
+alias docker-clean-proccess="docker rm \$(docker ps -qa)"
+alias docker-clean-all="docker-clean-proccess; docker-clean-images"
 
 alias sake="make -s"
 
