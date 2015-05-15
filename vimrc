@@ -210,7 +210,7 @@ endfunction
 " Ignore some files
 set wildignore+=*.pyc,*.swp,*.jpg,*.png,*.gif,*.o,*.so,*.gch
 let g:ctrlp_custom_ignore = {
-	\ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache$\|log$\|ninja_build$\|regress_final$',
+	\ 'dir':  '\v[\/](\.git$\|\.hg$\|\.svn$\|cache$\|log$\|ninja_build$\|regress_final|node_modules|bower_components)$',
 	\ 'file': '\.exe$\|\.so$\|\.dll$',
 	\ 'link': '',
 	\ }
