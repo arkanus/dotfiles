@@ -9,6 +9,7 @@
 	logu = log @{u}..
 	st = status -sb
 	diffc = diff --cached
+	n = number
 [user]
 	name = Marcos Sánchez
 	email = arkanus@gmail.com

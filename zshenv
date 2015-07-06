@@ -34,11 +34,15 @@ alias db='`make rinfo | grep "^psql -"`'
 
 alias sake="make -s"
 
-# Docker
+# Docker Compose
 alias dcp="docker-compose"
+alias dcpup="docker-compose up -d && docker-compose logs"
+
 alias docker-rmi="docker rmi \$(docker images|grep '^<none>'|awk '{print\$3}'|grep -v 'CONTAINER')"
 alias docker-rm="docker rm \$(docker ps -a|grep -v data|cut -d' ' -f1)"
 alias docker-rmall="docker-rm; docker-rmi"
+
+alias gn="git number"
 
 ## }}}
 
@@ -51,8 +55,6 @@ fi
 if [ -x /usr/libexec/path_helper ]; then
 	eval `/usr/libexec/path_helper -s`
 fi
-
-path=(/opt/local/bin $path /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin)
 
 export DOCKER_HOST=tcp://boot2docker:2376
 export DOCKER_CERT_PATH=/Users/marcos/.boot2docker/certs/boot2docker-vm
