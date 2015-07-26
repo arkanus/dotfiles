@@ -61,7 +61,7 @@ set mouse=a
 set visualbell
 set t_vb=
 "Avoid wait on the <ESC>O key combination
-set ttimeoutlen=200
+set ttimeoutlen=100
 " }}
 
 " General {{
@@ -69,20 +69,28 @@ set ttimeoutlen=200
 "set nobackup
 "set nowritebackup
 set history=1000
+set foldlevel=99		"Always unfold
+set colorcolumn=80		"Highlight column 80
 set showcmd
+set clipboard=unnamed	"Use system clipboard
 set incsearch
-set ignorecase			"ignorar case por defecto
-set smartcase			"Busquedas case sensitive solo si se usan mayusculas
-"Wrap stuff
+set ignorecase
+set smartcase			"Case sensitive search only when the term has mixed cases
 set wrap
 set linebreak
 "Only save tabs, split sizes and current dir on :mksession
 "Excludes hidden buffers
 set sessionoptions=tabpages,winsize,curdir
-set lazyredraw			"No redibujar cuando los script estan ejecutandose
-set scrolloff=3			"Siempre mostrar 3 lineas bajo y sobre el cursor
-"set ruler				"Mostar numeros de linea
+set lazyredraw
+set scrolloff=3			"Always show at least 3 lines above/below cursor
 set wildmenu
+set tabstop=4
+set shiftwidth=4
+set nosmartindent
+set tags+=./tags,~/.vim/tags,~/.vim/tags.php "Global tag files
+set diffopt+=vertical	"Use vertical splits on diffs
+
+" Hightlight trailing whitespaces on lines
 " Applies filetype plugins
 filetype plugin on
 " Aplies indentation options specified in ftplugins
@@ -91,16 +99,6 @@ filetype plugin indent on
 let mapleader = ","
 "Syntaxis coloreada
 syntax on
-"Identación
-"set expandtab
-set tabstop=4
-set shiftwidth=4
-set nosmartindent
-" Load these files for tag find/completion
-set tags+=./tags,~/.vim/tags,~/.vim/tags.php
-" Prefer vertical splits for diffs
-set diffopt+=vertical
-" Hightlight trailing whitespaces on lines
 highlight BadWhitespace ctermbg=red guibg=red
 " }}
 
