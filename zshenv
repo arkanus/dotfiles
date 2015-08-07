@@ -38,8 +38,8 @@ alias sake="make -s"
 alias dcp="docker-compose"
 alias dcpup="docker-compose up -d && docker-compose logs"
 
-alias docker-rmi="docker rmi \$(docker images|grep '^<none>'|awk '{print\$3}'|grep -v 'CONTAINER')"
-alias docker-rm="docker rm \$(docker ps -a|grep -v data|cut -d' ' -f1)"
+alias docker-rmi="docker rmi \$(docker images|grep '^<none>'|awk '{print\$3}')"
+alias docker-rm="docker rm \$(docker ps -a|grep -v data|cut -d' ' -f1|grep -v 'CONTAINER')"
 alias docker-rmall="docker-rm; docker-rmi"
 
 alias gn="git number"
@@ -65,3 +65,6 @@ export LIBGL_ALWAYS_INDIRECT=y
 
 #Golang root
 export GOPATH=$HOME/go
+if [[ -d $GOPATH/bin ]]; then
+	path+=($GOPATH/bin)
+fi
