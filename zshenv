@@ -42,6 +42,9 @@ alias docker-rmi="docker rmi \$(docker images|grep '^<none>'|awk '{print\$3}')"
 alias docker-rm="docker rm \$(docker ps -a|grep -v data|cut -d' ' -f1|grep -v 'CONTAINER')"
 alias docker-rmall="docker-rm; docker-rmi"
 
+# Docker Machine
+alias dkm="docker-machine"
+
 alias gn="git number"
 
 ## }}}
@@ -56,9 +59,8 @@ if [ -x /usr/libexec/path_helper ]; then
 	eval `/usr/libexec/path_helper -s`
 fi
 
-export DOCKER_HOST=tcp://boot2docker:2376
-export DOCKER_CERT_PATH=/Users/marcos/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
+# Use dev docker machine by default
+eval $(docker-machine env dev)
 
 #required for octave plot commands, otherwise it segfaults
 export LIBGL_ALWAYS_INDIRECT=y
