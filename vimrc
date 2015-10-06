@@ -12,7 +12,7 @@ filetype off
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'arkanus/snipmate-snippets'
+Bundle 'scrooloose/snipmate-snippets'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'ciaranm/inkpot'
 Bundle 'edsono/vim-matchit'
@@ -48,7 +48,7 @@ if $TERM =~ '256color'
 else
 	colorscheme elflord
 endif
-" set backspace+=indent,eol,start
+set backspace+=indent,start
 syntax on
 set autoread "Automatically reload modified files
 set autoindent
