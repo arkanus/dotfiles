@@ -34,6 +34,8 @@ alias db='`make rinfo | grep "^psql -"`'
 
 alias sake="make -s"
 
+alias dkr='docker'
+
 # Docker Compose
 alias dcp="docker-compose"
 alias dcpup="docker-compose up -d && docker-compose logs"

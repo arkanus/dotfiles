@@ -52,7 +52,7 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git django docker virtualenvwrapper)
+plugins=(git django docker docker-compose virtualenvwrapper)
 
 if [[ `uname` == 'Darwin' ]]
 then
@@ -92,3 +92,14 @@ setopt appendhistory
 # Jump words with Ctrl+arrows
 bindkey '^[[1;5C' emacs-forward-word
 bindkey '^[[1;5D' emacs-backward-word
+
+
+function dcp-bash {
+  CONTAINER_KEY=$1
+  CONTAINER_NAME=$(echo $(basename "$PWD") | sed 's/-//' )'_'$CONTAINER_KEY'_1'
+  docker exec -ti $CONTAINER_NAME bash
+}
+
+function docker-bash {
+	docker exec -ti $1 bash
+}
