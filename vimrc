@@ -49,12 +49,11 @@ if $TERM =~ '256color'
 else
 	colorscheme elflord
 endif
-set backspace+=indent,start
+set backspace+=indent,start,eol
 syntax on
 set autoread "Automatically reload modified files
 set autoindent
-" Read modelines
-set modelines=1
+set modeline
 set laststatus=2
 set cursorline
 set ttym=xterm2 "make the mouse to work on iterm2 (osx)
@@ -101,6 +100,9 @@ let mapleader = ","
 "Syntaxis coloreada
 syntax on
 highlight BadWhitespace ctermbg=red guibg=red
+
+"Encrypt
+set cm=blowfish2
 " }}
 
 " Keyboard Mappings {{
@@ -176,6 +178,9 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " Scons is python!
 au BufRead,BufNewFile SCons* setfiletype python
+
+" SaltStack States are YAML
+au BufRead,BufNewFile *.sls setfiletype yaml
 
 "}}
 
