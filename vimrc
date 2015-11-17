@@ -40,6 +40,7 @@ Bundle 'vim-scripts/closetag.vim'
 Bundle 'vim-scripts/grep.vim'
 Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'fatih/vim-go'
+Bundle 'tsaleh/vim-align'
 " }}
 
 " GUI tweaks {{
