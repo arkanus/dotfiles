@@ -19,6 +19,7 @@
 	ui = true
 [core]
 	excludesfile = /home/marcos/.gitignore_global
+	pager = less -F -X
 [github]
 	user = arkanus
 [grep]
