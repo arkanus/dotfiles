@@ -41,6 +41,7 @@ Bundle 'vim-scripts/grep.vim'
 Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'fatih/vim-go'
 Bundle 'tsaleh/vim-align'
+Bundle 'othree/yajs.vim'
 " }}
 
 " GUI tweaks {{
@@ -53,7 +54,8 @@ set backspace+=indent,start,eol
 syntax on
 set autoread "Automatically reload modified files
 set autoindent
-set modeline
+" set modeline=1
+set modelines=1
 set laststatus=2
 set cursorline
 set ttym=xterm2 "make the mouse to work on iterm2 (osx)
@@ -89,6 +91,9 @@ set shiftwidth=4
 set nosmartindent
 set tags+=./tags,~/.vim/tags,~/.vim/tags.php "Global tag files
 set diffopt+=vertical	"Use vertical splits on diffs
+
+set backupdir=~/.vim/backup,.,/tmp
+set directory=~/.vim/backup,.,/tmp
 
 " Hightlight trailing whitespaces on lines
 " Applies filetype plugins
