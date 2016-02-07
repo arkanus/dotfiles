@@ -122,6 +122,8 @@ nnoremap <Leader>m :call ToggleMouse()<cr>
 nnoremap <Leader>p :set paste!<cr>
 " Toggle autoclose plugin
 nmap <silent> <Leader>c :AutoCloseToggle<cr>
+" Toggle line numbers
+nmap <silent> <Leader>n :set number!<cr>
 " Toggle NERDTree file explorer split
 nmap <F3> :NERDTreeToggle<CR>
 nmap <S-F3> :NERDTreeMirror<CR>
