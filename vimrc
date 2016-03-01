@@ -12,7 +12,7 @@ filetype off
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'scrooloose/snipmate-snippets'
+Bundle 'honza/vim-snippets'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'ciaranm/inkpot'
 Bundle 'edsono/vim-matchit'
@@ -262,4 +262,8 @@ let g:pymode_rope_guess_project = 0
 " include some standard cpp header locations
 let g:syntastic_c_include_dirs=['src', 'src/include']
 let g:syntastic_cpp_include_dirs=['src', 'src/include']
+let g:syntastic_mode_map = {
+	\ "mode": "active",
+	\ "active_filetypes": [],
+	\ "passive_filetypes": ["go"] }
 " }}
