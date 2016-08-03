@@ -61,9 +61,6 @@ if [ -x /usr/libexec/path_helper ]; then
 	eval `/usr/libexec/path_helper -s`
 fi
 
-# Use dev docker machine by default
-eval $(docker-machine env dev)
-
 #required for octave plot commands, otherwise it segfaults
 export LIBGL_ALWAYS_INDIRECT=y
 
