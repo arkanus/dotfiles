@@ -22,10 +22,8 @@ Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
 Bundle 'mattn/emmet-vim'
-Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'mivok/vimtodo'
 Bundle 'msanders/snipmate.vim'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'scrooloose/syntastic'
@@ -41,7 +39,12 @@ Bundle 'vim-scripts/grep.vim'
 Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'fatih/vim-go'
 Bundle 'tsaleh/vim-align'
+"ES6 support
 Bundle 'othree/yajs.vim'
+"Time Tracking using Wakatime [https://wakatime.com]
+Bundle 'wakatime/vim-wakatime'
+Bundle 'gummesson/stereokai.vim'
+Bundle 'christophermca/meta5'
 " }}
 
 " GUI tweaks {{
@@ -70,6 +73,7 @@ set ttimeoutlen=100
 "no guardar backups (.swp)
 "set nobackup
 "set nowritebackup
+set number
 set history=1000
 set foldlevel=99		"Always unfold
 set colorcolumn=80		"Highlight column 80
@@ -98,7 +102,7 @@ set directory=~/.vim/backup,.,/tmp
 " Hightlight trailing whitespaces on lines
 " Applies filetype plugins
 filetype plugin on
-" Aplies indentation options specified in ftplugins
+" Applies indentation options specified in ftplugins
 filetype plugin indent on
 " Sets an easier to press leader key
 let mapleader = ","
