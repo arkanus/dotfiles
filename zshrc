@@ -9,7 +9,7 @@ export ZSH=$HOME/.oh-my-zsh
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 if echo $LANG | grep UTF-8 &> /dev/null; then
-	ZSH_THEME="robbyrussell"
+	ZSH_THEME="miloshadzic"
 else
 	ZSH_THEME="daveverwer"
 fi
@@ -52,7 +52,7 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git django docker docker-compose virtualenvwrapper)
+plugins=(git django docker docker-compose)
 
 if [[ `uname` == 'Darwin' ]]
 then
