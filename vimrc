@@ -29,15 +29,16 @@ Plugin 'vim-scripts/a.vim'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'fatih/vim-go'
 Plugin 'tsaleh/vim-align'
-Plugin 'marcelbeumer/spacedust.vim'
 Plugin 'othree/yajs.vim'
+Plugin 'marcelbeumer/spacedust.vim'
+Plugin 'crusoexia/vim-monokai'
 
 call vundle#end()
 " }}
 
 " GUI tweaks {{
 if $TERM =~ '256color'
-	colorscheme spacedust
+	colorscheme monokai
 else
 	colorscheme elflord
 endif
