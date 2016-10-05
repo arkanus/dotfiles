@@ -9,47 +9,35 @@
 " Vundle: Plugin package management without git externals! {{
 set nocompatible
 filetype off
-set rtp+=~/.vim/vundle.git/
-call vundle#rc()
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'honza/vim-snippets'
-Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'ciaranm/inkpot'
-Bundle 'edsono/vim-matchit'
-Bundle 'fholgado/vim-autoclose'
-Bundle 'groenewege/vim-less'
-Bundle 'jmcantrell/vim-virtualenv'
-Bundle 'kien/ctrlp.vim'
-Bundle 'klen/python-mode'
-Bundle 'mattn/emmet-vim'
-Bundle 'mattn/webapi-vim'
-Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'msanders/snipmate.vim'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'tomasr/molokai'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'vim-scripts/OmniCppComplete'
-Bundle 'vim-scripts/The-NERD-tree.git'
-Bundle 'vim-scripts/a.vim'
-Bundle 'vim-scripts/closetag.vim'
-Bundle 'vim-scripts/grep.vim'
-Bundle 'ekalinin/Dockerfile.vim'
-Bundle 'fatih/vim-go'
-Bundle 'tsaleh/vim-align'
-"ES6 support
-Bundle 'othree/yajs.vim'
-"Time Tracking using Wakatime [https://wakatime.com]
-Bundle 'wakatime/vim-wakatime'
-Bundle 'gummesson/stereokai.vim'
-Bundle 'christophermca/meta5'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'honza/vim-snippets'
+Plugin 'fholgado/vim-autoclose'
+Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'kien/ctrlp.vim'
+Plugin 'klen/python-mode'
+Plugin 'msanders/snipmate.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-scripts/OmniCppComplete'
+Plugin 'vim-scripts/The-NERD-tree.git'
+Plugin 'vim-scripts/a.vim'
+Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'fatih/vim-go'
+Plugin 'tsaleh/vim-align'
+Plugin 'marcelbeumer/spacedust.vim'
+Plugin 'othree/yajs.vim'
+
+call vundle#end()
 " }}
 
 " GUI tweaks {{
 if $TERM =~ '256color'
-	colorscheme molokai
+	colorscheme spacedust
 else
 	colorscheme elflord
 endif
