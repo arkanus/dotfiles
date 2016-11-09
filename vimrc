@@ -243,14 +243,10 @@ let g:pymode_lint_write = 0
 let g:pymode_options_other = 0
 " Dont fold python code when opening a file
 let g:pymode_folding = 0
-" Disable rope since I rarely use it
-let g:pymode_rope = 0
-"For some reason this doesnt work, but loking at the code, it should
-"let g:pymode_rope_autoimport_modules = ['os', 'os.path', 'traceback', 'logging', 'pdb']
-let g:pymode_rope_guess_project = 0
-" let g:pymode_rope_autoimport_generate = 0
-" let g:pymode_rope_lookup_project = 0
-" let g:pymode_rope_complete_on_dot = 0
+" let g:pymode_rope_guess_project = 0
+
+" Disable python linting, prefer syntastic
+let g:pymode_lint=0
 " }}
 
 " Syntastic {{
@@ -261,4 +257,9 @@ let g:syntastic_mode_map = {
 	\ "mode": "active",
 	\ "active_filetypes": [],
 	\ "passive_filetypes": ["go"] }
+
+" Python
+let g:syntastic_python_python_exec = '/usr/local/bin/python3'
+let g:syntastic_python_checkers = ['flake8']
+
 " }}
