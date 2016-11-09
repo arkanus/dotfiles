@@ -32,13 +32,15 @@ Plugin 'tsaleh/vim-align'
 Plugin 'othree/yajs.vim'
 Plugin 'marcelbeumer/spacedust.vim'
 Plugin 'crusoexia/vim-monokai'
+Plugin 'digitaltoad/vim-pug'
+Plugin 'tyrannicaltoucan/vim-quantum'
 
 call vundle#end()
 " }}
 
 " GUI tweaks {{
 if $TERM =~ '256color'
-	colorscheme monokai
+	colorscheme quantum
 else
 	colorscheme elflord
 endif
