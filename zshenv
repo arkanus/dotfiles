@@ -4,6 +4,8 @@ export ZSH_TMUX_AUTOCONNECT=true
 
 export EDITOR=vim
 
+VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+
 SOCK="/tmp/ssh-agent-$USER-screen"
 if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
 then
