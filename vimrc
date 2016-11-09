@@ -236,12 +236,12 @@ set statusline=%{fugitive#statusline()}\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 " }}
 
 " Pymode {{
-"python mode dont show error window
+" python mode dont show error window
 let g:pymode_lint_cwindow = 0
 let g:pymode_lint_write = 0
-"don't add line numbers & other predefined stuff
+" don't add line numbers & other predefined stuff
 let g:pymode_options_other = 0
-"Dont fold python code when opening a file
+" Dont fold python code when opening a file
 let g:pymode_folding = 0
 " Disable rope since I rarely use it
 let g:pymode_rope = 0
