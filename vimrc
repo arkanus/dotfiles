@@ -23,17 +23,18 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
-Plugin 'vim-scripts/OmniCppComplete'
 Plugin 'vim-scripts/The-NERD-tree.git'
-Plugin 'vim-scripts/a.vim'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'fatih/vim-go'
 Plugin 'tsaleh/vim-align'
 Plugin 'othree/yajs.vim'
-Plugin 'marcelbeumer/spacedust.vim'
-Plugin 'crusoexia/vim-monokai'
 Plugin 'digitaltoad/vim-pug'
+
+" Colorschemes
 Plugin 'tyrannicaltoucan/vim-quantum'
+Plugin 'KeitaNakamura/neodark.vim'
+Plugin 'crusoexia/vim-monokai'
+Plugin 'marcelbeumer/spacedust.vim'
 
 call vundle#end()
 " }}
