@@ -42,6 +42,7 @@ call vundle#end()
 " GUI tweaks {{
 if $TERM =~ '256color'
 	colorscheme quantum
+	set termguicolors
 else
 	colorscheme elflord
 endif
