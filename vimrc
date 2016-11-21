@@ -63,9 +63,6 @@ set ttimeoutlen=100
 " }}
 
 " General {{
-"no guardar backups (.swp)
-"set nobackup
-"set nowritebackup
 set number
 set history=1000
 set foldlevel=99		"Always unfold
@@ -92,7 +89,6 @@ set diffopt+=vertical	"Use vertical splits on diffs
 set backupdir=~/.vim/backup,.,/tmp
 set directory=~/.vim/backup,.,/tmp
 
-" Hightlight trailing whitespaces on lines
 " Applies filetype plugins
 filetype plugin on
 " Applies indentation options specified in ftplugins
@@ -101,7 +97,10 @@ filetype plugin indent on
 let mapleader = ","
 "Syntaxis coloreada
 syntax on
-highlight BadWhitespace ctermbg=red guibg=red
+
+" Hightlight trailing whitespaces on lines
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
 
 "Encrypt
 set cm=blowfish2
@@ -174,11 +173,6 @@ au BufRead * normal zR
 
 "crear tags para los archivos del directorio actual presionando <F12>
 au Filetype python map <F12> :!ctags -R --python-kinds=-i --languages=Python . <CR>
-
-" Display tabs at the beginning of a line in Python mode as bad.
-au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
-" Make trailing whitespace be flagged as bad.
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " Scons is python!
 au BufRead,BufNewFile SCons* setfiletype python
