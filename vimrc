@@ -60,6 +60,8 @@ set visualbell
 set t_vb=
 "Avoid wait on the <ESC>O key combination
 set ttimeoutlen=100
+" Show character on line breaks
+let &showbreak="↪️ "
 " }}
 
 " General {{
