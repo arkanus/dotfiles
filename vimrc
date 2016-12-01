@@ -13,26 +13,26 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'digitaltoad/vim-pug'
+Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'fatih/vim-go'
 Plugin 'fholgado/vim-autoclose'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'kien/ctrlp.vim'
 Plugin 'klen/python-mode'
+Plugin 'othree/yajs.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
-Plugin 'vim-scripts/The-NERD-tree.git'
-Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'fatih/vim-go'
 Plugin 'tsaleh/vim-align'
-Plugin 'othree/yajs.vim'
-Plugin 'digitaltoad/vim-pug'
+Plugin 'vim-scripts/The-NERD-tree.git'
 
 " Colorschemes
-Plugin 'tyrannicaltoucan/vim-quantum'
 Plugin 'KeitaNakamura/neodark.vim'
 Plugin 'crusoexia/vim-monokai'
 Plugin 'marcelbeumer/spacedust.vim'
+Plugin 'tyrannicaltoucan/vim-quantum'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
