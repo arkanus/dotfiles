@@ -13,12 +13,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'honza/vim-snippets'
 Plugin 'fholgado/vim-autoclose'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'kien/ctrlp.vim'
 Plugin 'klen/python-mode'
-Plugin 'msanders/snipmate.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-fugitive'
@@ -35,6 +33,10 @@ Plugin 'tyrannicaltoucan/vim-quantum'
 Plugin 'KeitaNakamura/neodark.vim'
 Plugin 'crusoexia/vim-monokai'
 Plugin 'marcelbeumer/spacedust.vim'
+
+" Snippets
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 call vundle#end()
 " }}
@@ -155,6 +157,12 @@ set completeopt=preview,menu,menuone,longest
 set pumheight=12
 "cerrar automágicamente la ventana de preview
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+" }}
+
+" UltiSnips {{
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " }}
 
 " NERDCommenter {{
