@@ -4,10 +4,14 @@
 *.swo
 
 # Exhuberant ctags files
-.tags
-TAGS
-tags
-.ropeproject
+/.tags
+/TAGS
+/tags
+
+/.ropeproject
 
 # Python compiled files
 *.pyc
+
+# Virtualenv dir or file for zsh venv plugin
+/.venv
