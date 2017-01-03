@@ -1,4 +1,5 @@
-
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 export ZSH_TMUX_AUTOCONNECT=true
 
@@ -14,6 +15,11 @@ then
     export SSH_AUTH_SOCK=$SOCK
 fi
 
+path+=(/usr/local/bin)
+
+if [[ -d $HOME/go/bin ]]; then
+	path+=($HOME/go/bin)
+fi
 
 ## Aliases  {{{
 
