@@ -43,7 +43,6 @@ call vundle#end()
 " GUI tweaks {{
 if $TERM =~ '256color'
 	colorscheme quantum
-	set termguicolors
 else
 	colorscheme elflord
 endif
@@ -256,6 +255,9 @@ let g:pymode_folding = 0
 
 " Disable python linting, prefer syntastic
 let g:pymode_lint=0
+
+" Override go-to.definition key shortcut to Ctrl-]
+let g:pymode_rope_goto_definition_bind = "<C-]>"
 " }}
 
 " Syntastic {{
