@@ -258,6 +258,7 @@ let g:pymode_lint=0
 
 " Override go-to.definition key shortcut to Ctrl-]
 let g:pymode_rope_goto_definition_bind = "<C-]>"
+let g:pymode_rope_goto_definition_cmd = 'e'
 " }}
 
 " Syntastic {{
