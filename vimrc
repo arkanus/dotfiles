@@ -26,6 +26,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tsaleh/vim-align'
 Plugin 'vim-scripts/The-NERD-tree.git'
+Plugin 'vitapluvia/vim-gurl'
 
 " Colorschemes
 Plugin 'KeitaNakamura/neodark.vim'
@@ -274,4 +275,8 @@ let g:syntastic_mode_map = {
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 let g:syntastic_python_checkers = ['flake8']
 
+" }}
+
+" Vim-gurl {{
+noremap <leader>gr :call Gurl()<CR>
 " }}
