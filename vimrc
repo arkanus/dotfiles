@@ -137,6 +137,9 @@ if &diff
 endif
 " comma to times for autocompletion
 inoremap <Leader>, <C-x><C-o>
+
+" jump to tag in new tab
+:nnoremap <silent><Leader><C-]> <C-w><C-]><C-w>T
 " }}
 
 " Enable Persistent Undo {{
