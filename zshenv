@@ -77,3 +77,7 @@ export GOPATH=$HOME/go
 if [[ -d $GOPATH/bin ]]; then
 	path+=($GOPATH/bin)
 fi
+
+#NVM stuff
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
