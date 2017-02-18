@@ -47,6 +47,11 @@ if $TERM =~ '256color'
 else
 	colorscheme elflord
 endif
+
+if has("termguicolors")
+	set termguicolors
+endif
+
 set backspace+=indent,start,eol
 syntax on
 set autoread "Automatically reload modified files
