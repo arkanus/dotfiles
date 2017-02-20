@@ -2,6 +2,7 @@
 *.swp
 *.vim
 *.swo
+*.swn
 
 # Exhuberant ctags files
 /.tags
