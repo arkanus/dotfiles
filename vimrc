@@ -13,10 +13,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'fatih/vim-go'
 Plugin 'critiqjo/vim-autoclose'
-Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'kien/ctrlp.vim'
 Plugin 'klen/python-mode'
 Plugin 'othree/yajs.vim'
@@ -29,9 +27,9 @@ Plugin 'vim-scripts/The-NERD-tree.git'
 Plugin 'vitapluvia/vim-gurl'
 
 " Colorschemes
-Plugin 'KeitaNakamura/neodark.vim'
-Plugin 'crusoexia/vim-monokai'
-Plugin 'marcelbeumer/spacedust.vim'
+" Plugin 'KeitaNakamura/neodark.vim'
+" Plugin 'crusoexia/vim-monokai'
+" Plugin 'marcelbeumer/spacedust.vim'
 Plugin 'tyrannicaltoucan/vim-quantum'
 
 " Snippets
@@ -60,7 +58,7 @@ set autoindent
 set modelines=1
 set laststatus=2
 set cursorline
-set ttym=xterm2 "make the mouse to work on iterm2 (osx)
+" set ttym=xterm2 "make the mouse to work on iterm2 (osx)
 set mouse=a
 set visualbell
 set t_vb=
@@ -115,7 +113,7 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 "Encrypt
-set cm=blowfish2
+" set cm=blowfish2
 " }}
 
 " Keyboard Mappings {{
