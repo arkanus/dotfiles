@@ -14,8 +14,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'ekalinin/Dockerfile.vim', {'for': 'dockerfile'}
 Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'critiqjo/vim-autoclose'
-Plug 'jmcantrell/vim-virtualenv'
 Plug 'kien/ctrlp.vim'
+Plug 'jmcantrell/vim-virtualenv', {'for': 'python'}
 Plug 'klen/python-mode', {'for': 'python'}
 Plug 'othree/yajs.vim', {'for': 'javascript'}
 Plug 'scrooloose/syntastic'
@@ -27,9 +27,9 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'vitapluvia/vim-gurl'
 
 " Colorschemes
-Plug 'KeitaNakamura/neodark.vim'
-Plug 'crusoexia/vim-monokai'
-Plug 'marcelbeumer/spacedust.vim'
+" Plug 'KeitaNakamura/neodark.vim'
+" Plug 'crusoexia/vim-monokai'
+" Plug 'marcelbeumer/spacedust.vim'
 Plug 'tyrannicaltoucan/vim-quantum'
 
 " Snippets
@@ -58,7 +58,7 @@ set autoindent
 set modelines=1
 set laststatus=2
 set cursorline
-set ttym=xterm2 "make the mouse to work on iterm2 (osx)
+" set ttym=xterm2 "make the mouse to work on iterm2 (osx)
 set mouse=a
 set visualbell
 set t_vb=
@@ -113,7 +113,7 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 "Encrypt
-set cm=blowfish2
+" set cm=blowfish2
 " }}
 
 " Keyboard Mappings {{
