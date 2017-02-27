@@ -11,7 +11,6 @@ set nocompatible
 filetype off
 call plug#begin('~/.vim/plugged')
 
-Plug 'ekalinin/Dockerfile.vim', {'for': 'dockerfile'}
 Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'critiqjo/vim-autoclose'
 Plug 'kien/ctrlp.vim'
