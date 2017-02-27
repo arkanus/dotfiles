@@ -2,6 +2,5 @@
 *.old
 /vim/sessions
 /bash/git-completion.bash
-/vim/bundle/*
-!/vim/bundle/Vundle.vim
 /vim/backup
+/vim/plugged

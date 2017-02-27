@@ -6,39 +6,37 @@
 " author: Marcos Sánchez
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Vundle: Plugin package management without git externals! {{
+" Plug: plugin manager! {{
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'fatih/vim-go'
-Plugin 'critiqjo/vim-autoclose'
-Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'kien/ctrlp.vim'
-Plugin 'klen/python-mode'
-Plugin 'othree/yajs.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'tsaleh/vim-align'
-Plugin 'vim-scripts/The-NERD-tree.git'
-Plugin 'vitapluvia/vim-gurl'
+Plug 'ekalinin/Dockerfile.vim', {'for': 'dockerfile'}
+Plug 'fatih/vim-go', {'for': 'go'}
+Plug 'critiqjo/vim-autoclose'
+Plug 'jmcantrell/vim-virtualenv'
+Plug 'kien/ctrlp.vim'
+Plug 'klen/python-mode', {'for': 'python'}
+Plug 'othree/yajs.vim', {'for': 'javascript'}
+Plug 'scrooloose/syntastic'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tsaleh/vim-align'
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'vitapluvia/vim-gurl'
 
 " Colorschemes
-Plugin 'KeitaNakamura/neodark.vim'
-Plugin 'crusoexia/vim-monokai'
-Plugin 'marcelbeumer/spacedust.vim'
-Plugin 'tyrannicaltoucan/vim-quantum'
+Plug 'KeitaNakamura/neodark.vim'
+Plug 'crusoexia/vim-monokai'
+Plug 'marcelbeumer/spacedust.vim'
+Plug 'tyrannicaltoucan/vim-quantum'
 
 " Snippets
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
-call vundle#end()
+call plug#end()
 " }}
 
 " GUI tweaks {{
