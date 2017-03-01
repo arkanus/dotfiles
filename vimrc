@@ -24,6 +24,7 @@ Plug 'tpope/vim-surround'
 Plug 'tsaleh/vim-align'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'vitapluvia/vim-gurl'
+Plug 'neomake/neomake'
 
 " Colorschemes
 " Plug 'KeitaNakamura/neodark.vim'
@@ -280,6 +281,9 @@ let g:syntastic_mode_map = {
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 let g:syntastic_python_checkers = ['flake8']
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_style_error_symbol = "✖︎"
+let g:syntastic_style_warning_symbol = "▶︎"
 " }}
 
 " Vim-gurl {{
