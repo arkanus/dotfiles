@@ -79,5 +79,7 @@ if [[ -d $GOPATH/bin ]]; then
 fi
 
 #NVM stuff
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+if [ -x /usr/local/opt/nvm/nvm.sh ]; then
+	export NVM_DIR="$HOME/.nvm"
+	. "/usr/local/opt/nvm/nvm.sh"
+fi
