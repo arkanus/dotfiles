@@ -10,6 +10,7 @@
 /tags
 
 /.ropeproject
+/.noseids
 
 # Python compiled files
 *.pyc
