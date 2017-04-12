@@ -287,5 +287,5 @@ let g:syntastic_style_warning_symbol = "▶︎"
 " }}
 
 " Vim-gurl {{
-noremap <leader>gr :call Gurl()<CR>
+noremap <leader>gu :call Gurl()<CR>
 " }}
