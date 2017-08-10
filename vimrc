@@ -131,8 +131,8 @@ nmap <silent> <Leader>c :AutoCloseToggle<cr>
 " Toggle line numbers
 nmap <silent> <Leader>n :set number!<cr>
 " Toggle NERDTree file explorer split
-nmap <F3> :NERDTreeToggle<CR>
-nmap <S-F3> :NERDTreeMirror<CR>
+nmap <Leader>3 :NERDTreeToggle<CR>
+" nmap <S-F3> :NERDTreeMirror<CR>
 " Easy diff lines put/get
 if &diff
 	vnoremap < :diffget<CR>
