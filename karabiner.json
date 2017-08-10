@@ -1,0 +1,133 @@
+{
+    "global": {
+        "check_for_updates_on_startup": true,
+        "show_in_menu_bar": true,
+        "show_profile_name_in_menu_bar": false
+    },
+    "profiles": [
+        {
+            "complex_modifications": {
+                "parameters": {
+                    "basic.to_if_alone_timeout_milliseconds": 1000
+                },
+                "rules": [
+                    {
+                        "description": "PC-Style Lock Screen",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\."
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "power",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Exchange semicolon and colon",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_option",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_command"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "left_command",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_option"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "devices": [],
+            "fn_function_keys": {
+                "f1": "display_brightness_decrement",
+                "f10": "mute",
+                "f11": "volume_decrement",
+                "f12": "volume_increment",
+                "f2": "display_brightness_increment",
+                "f3": "mission_control",
+                "f4": "launchpad",
+                "f5": "illumination_decrement",
+                "f6": "illumination_increment",
+                "f7": "rewind",
+                "f8": "play_or_pause",
+                "f9": "fastforward"
+            },
+            "name": "Default profile",
+            "selected": true,
+            "simple_modifications": {},
+            "virtual_hid_keyboard": {
+                "caps_lock_delay_milliseconds": 0,
+                "keyboard_type": "ansi"
+            }
+        }
+    ]
+}
