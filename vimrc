@@ -25,6 +25,7 @@ Plug 'tsaleh/vim-align'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'vitapluvia/vim-gurl'
 Plug 'neomake/neomake'
+Plug 'sheerun/vim-polyglot'
 
 " Colorschemes
 " Plug 'KeitaNakamura/neodark.vim'
