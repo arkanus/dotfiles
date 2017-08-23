@@ -49,7 +49,7 @@ alias dcp="docker-compose"
 alias dcpup="docker-compose up -d && docker-compose logs"
 
 alias docker-rmi="docker rmi \$(docker images|grep '^<none>'|awk '{print\$3}')"
-alias docker-rm="docker rm -v `docker ps --filter status=exited`"
+alias docker-rm="docker rm -v \$( docker ps -q --filter status=exited )"
 alias docker-rmall="docker-rm; docker-rmi"
 
 # Docker Machine
