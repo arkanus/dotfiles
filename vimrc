@@ -259,6 +259,7 @@ let g:pymode_lint_write = 0
 let g:pymode_options_other = 0
 " Dont fold python code when opening a file
 let g:pymode_folding = 0
+let g:pymode_rope_regenerate_on_write = 0
 " let g:pymode_rope_guess_project = 0
 
 " Disable python linting, prefer syntastic
