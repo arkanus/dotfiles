@@ -26,25 +26,8 @@ fi
 # Fix key forwarding in stupid screen
 alias fixssh="source ~/fixssh"
 
-# List process with pid + command
-alias pso="ps -e -opid,cmd"
-
-# Django stuff
-alias dj="python manage.py"
-alias djr="dj runserver"
-alias djrp="dj runserver_plus"
-alias djsm="dj schemamigration --auto"
-alias djmg="dj migrate"
-alias djpyc="dj clean_pyc"
-alias epilpsyoff="bind 'set bell-style none'"
-alias epilpsyon="bind 'set bell-style visible'"
-alias db='`make rinfo | grep "^psql -"`'
-
-alias sake="make -s"
-
-alias dkr='docker'
-
 # Docker Compose
+alias dkr='docker'
 alias dcp="docker-compose"
 alias dcpup="docker-compose up -d && docker-compose logs"
 
@@ -52,10 +35,11 @@ alias docker-rmi="docker rmi \$(docker images|grep '^<none>'|awk '{print\$3}')"
 alias docker-rm="docker rm -v \$( docker ps -q --filter status=exited )"
 alias docker-rmall="docker-rm; docker-rmi"
 
-# Docker Machine
-alias dkm="docker-machine"
-
 alias gn="git number"
+alias sake="make -s"
+
+# Ctags for python
+alias ctags-python="ctags -R --fields=+l --languages=python --python-kinds=-iv"
 
 ## }}}
 
