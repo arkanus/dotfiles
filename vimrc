@@ -124,7 +124,7 @@ nmap  <C-j> :cn<CR>
 " Toggle search result highlighting
 map <Leader>h :set invhls <CR>
 " Toggle mouse input (useful for terminal emulator copy/paste)
-nnoremap <Leader>m :call ToggleMouse()<cr>
+nnoremap <Leader>mo :call ToggleMouse()<cr>
 " Toggle paste mode (useful for terminal emulator copy/paste)
 nnoremap <Leader>p :set paste!<cr>
 " Toggle autoclose plugin
@@ -144,6 +144,10 @@ inoremap <Leader>, <C-x><C-o>
 
 " jump to tag in new tab
 :nnoremap <silent><Leader><C-]> <C-w><C-]><C-w>T
+
+" newomake
+:nnoremap <leader>ma :Neomake<cr>
+:nnoremap <leader>mm :Neomake!<cr>
 " }}
 
 " Enable Persistent Undo {{
