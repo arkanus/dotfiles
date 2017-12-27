@@ -26,6 +26,7 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'vitapluvia/vim-gurl'
 Plug 'neomake/neomake'
 Plug 'sheerun/vim-polyglot'
+Plug 'b4b4r07/vim-hcl'
 
 " Colorschemes
 " Plug 'KeitaNakamura/neodark.vim'
@@ -203,6 +204,10 @@ au BufRead,BufNewFile SCons* setfiletype python
 
 " SaltStack States are YAML
 au BufRead,BufNewFile *.sls setfiletype yaml
+
+" don't show full path when opening files relative path
+" sometimes popening files with tree explorer or opening a dir causes this
+autocmd BufReadPost * silent! lcd .
 
 "}}
 
