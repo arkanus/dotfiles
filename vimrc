@@ -150,7 +150,6 @@ inoremap <Leader>, <C-x><C-o>
 " Neomake {{
 :nnoremap <leader>ma :Neomake<cr>
 :nnoremap <leader>mm :Neomake!<cr>
-let g:neomake_open_list = 2
 " }}
 
 " Enable Persistent Undo {{
