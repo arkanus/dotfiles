@@ -145,10 +145,12 @@ inoremap <Leader>, <C-x><C-o>
 
 " jump to tag in new tab
 :nnoremap <silent><Leader><C-]> <C-w><C-]><C-w>T
+" }}
 
-" newomake
+" Neomake {{
 :nnoremap <leader>ma :Neomake<cr>
 :nnoremap <leader>mm :Neomake!<cr>
+let g:neomake_open_list = 2
 " }}
 
 " Enable Persistent Undo {{
