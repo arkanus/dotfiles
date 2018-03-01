@@ -301,3 +301,16 @@ let g:syntastic_style_warning_symbol = "▶︎"
 " Vim-gurl {{
 noremap <leader>gu :call Gurl()<CR>
 " }}
+
+" NeoMake {{
+
+let g:neomake_warning_sign = {
+  \ 'text': '▶︎',
+  \ 'texthl': 'WarningMsg',
+  \ }
+let g:neomake_error_sign = {
+  \ 'text': '✖︎',
+  \ 'texthl': 'ErrorMsg',
+  \ }
+
+" }}
