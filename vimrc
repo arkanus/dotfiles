@@ -11,22 +11,23 @@ set nocompatible
 filetype off
 call plug#begin('~/.vim/plugged')
 
-Plug 'fatih/vim-go', {'for': 'go'}
+Plug 'b4b4r07/vim-hcl'
 Plug 'critiqjo/vim-autoclose'
-Plug 'kien/ctrlp.vim'
+Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'jmcantrell/vim-virtualenv', {'for': 'python'}
+Plug 'jodosha/vim-godebug', {'for': 'go'}
+Plug 'kien/ctrlp.vim'
 Plug 'klen/python-mode', {'for': 'python'}
+Plug 'neomake/neomake'
 Plug 'othree/yajs.vim', {'for': 'javascript'}
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'scrooloose/syntastic'
+Plug 'sheerun/vim-polyglot'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tsaleh/vim-align'
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'vitapluvia/vim-gurl'
-Plug 'neomake/neomake'
-Plug 'sheerun/vim-polyglot'
-Plug 'b4b4r07/vim-hcl'
 
 " Colorschemes
 " Plug 'KeitaNakamura/neodark.vim'
