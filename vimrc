@@ -30,10 +30,8 @@ Plug 'tsaleh/vim-align'
 Plug 'vitapluvia/vim-gurl'
 
 " Colorschemes
-" Plug 'KeitaNakamura/neodark.vim'
-" Plug 'crusoexia/vim-monokai'
-" Plug 'marcelbeumer/spacedust.vim'
 Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'yuttie/hydrangea-vim'
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -44,7 +42,7 @@ call plug#end()
 
 " GUI tweaks {{
 if $TERM =~ '256color'
-	colorscheme quantum
+	colorscheme hydrangea
 else
 	colorscheme elflord
 endif
