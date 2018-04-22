@@ -28,10 +28,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tsaleh/vim-align'
 Plug 'vitapluvia/vim-gurl'
+Plug 'davidhalter/jedi-vim'
 
 " Colorschemes
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'yuttie/hydrangea-vim'
+Plug 'skielbasa/vim-material-monokai'
 
 " Snippets
 Plug 'SirVer/ultisnips'
