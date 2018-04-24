@@ -315,3 +315,6 @@ let g:neomake_error_sign = {
   \ }
 
 " }}
+
+
+let g:python_host_prog = '/usr/local/bin/python2'
