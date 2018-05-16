@@ -30,6 +30,9 @@ Plug 'tsaleh/vim-align'
 Plug 'vitapluvia/vim-gurl'
 Plug 'davidhalter/jedi-vim'
 
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 " Colorschemes
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'yuttie/hydrangea-vim'
@@ -44,13 +47,13 @@ call plug#end()
 
 " GUI tweaks {{
 if $TERM =~ '256color'
-	colorscheme hydrangea
+    colorscheme hydrangea
 else
-	colorscheme elflord
+    colorscheme elflord
 endif
 
 if has("termguicolors")
-	set termguicolors
+    set termguicolors
 endif
 
 set backspace+=indent,start,eol
@@ -71,29 +74,33 @@ set ttimeoutlen=100
 let &showbreak="↪️ "
 " }}
 
+" Airline {{
+let airline_theme="kolor"
+" }}
+
 " General {{
 set number
 set history=1000
-set foldlevel=99		"Always unfold
-set colorcolumn=80		"Highlight column 80
+set foldlevel=99        "Always unfold
+set colorcolumn=80        "Highlight column 80
 set showcmd
-set clipboard=unnamed	"Use system clipboard
+set clipboard=unnamed    "Use system clipboard
 set incsearch
 set ignorecase
-set smartcase			"Case sensitive search only when the term has mixed cases
+set smartcase            "Case sensitive search only when the term has mixed cases
 set wrap
 set linebreak
 "Only save tabs, split sizes and current dir on :mksession
 "Excludes hidden buffers
 set sessionoptions=tabpages,winsize,curdir
 set lazyredraw
-set scrolloff=3			"Always show at least 3 lines above/below cursor
+set scrolloff=3            "Always show at least 3 lines above/below cursor
 set wildmenu
 set tabstop=4
 set shiftwidth=4
 set nosmartindent
 set tags+=./tags,~/.vim/tags,~/.vim/tags.php "Global tag files
-set diffopt+=vertical	"Use vertical splits on diffs
+set diffopt+=vertical    "Use vertical splits on diffs
 
 set backupdir=~/.vim/backup,.,/tmp
 set directory=~/.vim/backup,.,/tmp
@@ -138,8 +145,8 @@ nmap <Leader>3 :NERDTreeToggle<CR>
 " nmap <S-F3> :NERDTreeMirror<CR>
 " Easy diff lines put/get
 if &diff
-	vnoremap < :diffget<CR>
-	vnoremap > :diffput<CR>
+    vnoremap < :diffget<CR>
+    vnoremap > :diffput<CR>
 endif
 " comma to times for autocompletion
 inoremap <Leader>, <C-x><C-o>
@@ -155,10 +162,10 @@ inoremap <Leader>, <C-x><C-o>
 
 " Enable Persistent Undo {{
 if exists("&undodir")
-	set undofile
-	set undodir=$HOME/.vim/undo
-	set undolevels=1000
-	set undoreload=10000
+    set undofile
+    set undodir=$HOME/.vim/undo
+    set undolevels=1000
+    set undoreload=10000
 endif
 " }}
 
@@ -217,7 +224,7 @@ autocmd BufReadPost * silent! lcd .
 
 "" Recargar snippets SnipMate
 function! ReloadSnippets()
-	let ft = &filetype
+    let ft = &filetype
     if strlen( ft ) == 0
         let filetype = "_"
     else
@@ -229,13 +236,13 @@ function! ReloadSnippets()
 endfunction
 
 function! ToggleMouse()
-	if &mouse == 'a'
-		set mouse=
-		echo "Mouse usage disabled"
-	else
-		set mouse=a
-		echo "Mouse usage enabled"
-	endif
+    if &mouse == 'a'
+        set mouse=
+        echo "Mouse usage disabled"
+    else
+        set mouse=a
+        echo "Mouse usage enabled"
+    endif
 endfunction
 "}}
 
@@ -243,10 +250,10 @@ endfunction
 " Ignore some files
 set wildignore+=*.pyc,*.swp,*.jpg,*.png,*.gif,*.o,*.so,*.gch
 let g:ctrlp_custom_ignore = {
-	\ 'dir':  '\v[\/](\.git$\|\.hg$\|\.svn$\|cache$\|log$\|ninja_build$\|regress_final|node_modules|bower_components)$',
-	\ 'file': '\.exe$\|\.so$\|\.dll$',
-	\ 'link': '',
-	\ }
+    \ 'dir':  '\v[\/](\.git$\|\.hg$\|\.svn$\|cache$\|log$\|ninja_build$\|regress_final|node_modules|bower_components)$',
+    \ 'file': '\.exe$\|\.so$\|\.dll$',
+    \ 'link': '',
+    \ }
 let g:ctrlp_extensions = ['tag', 'buffertag']
 " Only start searching when input stop (in ms)
 let g:ctrlp_lazy_update = 250
@@ -286,9 +293,9 @@ let g:pymode_rope_goto_definition_cmd = 'e'
 let g:syntastic_c_include_dirs=['src', 'src/include']
 let g:syntastic_cpp_include_dirs=['src', 'src/include']
 let g:syntastic_mode_map = {
-	\ "mode": "active",
-	\ "active_filetypes": [],
-	\ "passive_filetypes": ["go"] }
+    \ "mode": "active",
+    \ "active_filetypes": [],
+    \ "passive_filetypes": ["go"] }
 
 " Python
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
