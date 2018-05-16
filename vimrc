@@ -29,6 +29,7 @@ Plug 'tpope/vim-surround'
 Plug 'tsaleh/vim-align'
 Plug 'vitapluvia/vim-gurl'
 Plug 'davidhalter/jedi-vim'
+Plug 'ap/vim-buftabline'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -152,7 +153,10 @@ endif
 inoremap <Leader>, <C-x><C-o>
 
 " jump to tag in new tab
-:nnoremap <silent><Leader><C-]> <C-w><C-]><C-w>T
+nnoremap <silent><Leader><C-]> <C-w><C-]><C-w>T
+nnoremap tt :bnext<cr>
+nnoremap TT :bprev<cr>
+
 " }}
 
 " Neomake {{
