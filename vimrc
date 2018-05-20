@@ -11,8 +11,10 @@ set nocompatible
 filetype off
 call plug#begin('~/.vim/plugged')
 
+Plug 'ap/vim-buftabline'
 Plug 'b4b4r07/vim-hcl'
 Plug 'critiqjo/vim-autoclose'
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'jmcantrell/vim-virtualenv', {'for': 'python'}
 Plug 'jodosha/vim-godebug', {'for': 'go'}
@@ -28,8 +30,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tsaleh/vim-align'
 Plug 'vitapluvia/vim-gurl'
-Plug 'davidhalter/jedi-vim'
-Plug 'ap/vim-buftabline'
+Plug 'junegunn/vim-emoji'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -183,6 +184,11 @@ set pumheight=12
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 " }}
 
+" VIM-Emoji complete func {{
+" trigger this with ctrl-x ctrl-u in insert mode
+set completefunc=emoji#complete
+" }}
+
 " UltiSnips {{
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -328,4 +334,4 @@ let g:neomake_error_sign = {
 " }}
 
 
-let g:python_host_prog = '/usr/local/bin/python2'
+let g:python_host_prog = '/usr/local/bin/python3'
