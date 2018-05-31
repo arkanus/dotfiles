@@ -11,7 +11,6 @@ set nocompatible
 filetype off
 call plug#begin('~/.vim/plugged')
 
-Plug 'ap/vim-buftabline'
 Plug 'b4b4r07/vim-hcl'
 Plug 'critiqjo/vim-autoclose'
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
@@ -155,8 +154,6 @@ inoremap <Leader>, <C-x><C-o>
 
 " jump to tag in new tab
 nnoremap <silent><Leader><C-]> <C-w><C-]><C-w>T
-nnoremap tt :bnext<cr>
-nnoremap TT :bprev<cr>
 
 " }}
 
