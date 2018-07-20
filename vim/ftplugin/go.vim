@@ -1,5 +1,6 @@
 nnoremap <Leader>i :GoImports<CR>
 nnoremap <Leader>t :GoTest<CR>
+nnoremap <Leader>co :GoCoverageToggle<CR>
 
 autocmd! BufWritePost,Bufenter * Neomake
 

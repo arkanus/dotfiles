@@ -40,7 +40,6 @@ Plug 'yuttie/hydrangea-vim'
 Plug 'skielbasa/vim-material-monokai'
 
 " Snippets
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 call plug#end()
