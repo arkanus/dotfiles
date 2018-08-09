@@ -40,7 +40,7 @@ Plug 'yuttie/hydrangea-vim'
 Plug 'skielbasa/vim-material-monokai'
 
 " Snippets
-Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 
 call plug#end()
 " }}
@@ -226,33 +226,7 @@ autocmd BufReadPost * silent! lcd .
 
 "}}
 
-" Various Functions {{
-
-"" Recargar snippets SnipMate
-function! ReloadSnippets()
-    let ft = &filetype
-    if strlen( ft ) == 0
-        let filetype = "_"
-    else
-        let filetype = ft
-    endif
-
-    call ResetSnippets()
-    call GetSnippets( g:snippets_dir, &filetype )
-endfunction
-
-function! ToggleMouse()
-    if &mouse == 'a'
-        set mouse=
-        echo "Mouse usage disabled"
-    else
-        set mouse=a
-        echo "Mouse usage enabled"
-    endif
-endfunction
-"}}
-
-" CtrlP {{
+" CtrlP {{{{}}
 " Ignore some files
 set wildignore+=*.pyc,*.swp,*.jpg,*.png,*.gif,*.o,*.so,*.gch
 let g:ctrlp_custom_ignore = {
