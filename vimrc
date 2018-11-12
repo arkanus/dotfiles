@@ -31,6 +31,7 @@ Plug 'tsaleh/vim-align'
 Plug 'vitapluvia/vim-gurl'
 Plug 'junegunn/vim-emoji'
 Plug 'sirtaj/vim-openscad'
+Plug 'craigemery/vim-autotag'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
