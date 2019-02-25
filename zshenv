@@ -44,6 +44,9 @@ alias ctags-python="ctags -R --fields=+l --languages=python --python-kinds=-iv"
 ## SSH without adding to known hosts or checks
 alias ssh-nohost="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 
+alias kcl=kubectl
+alias kns=kubens
+alias ktx=kubectx
 ## }}}
 
 if [[ -a $HOME/.zshenv_local ]]
