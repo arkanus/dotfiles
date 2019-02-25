@@ -47,6 +47,8 @@ alias ssh-nohost="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=n
 alias kcl=kubectl
 alias kns=kubens
 alias ktx=kubectx
+
+alias watch='watch '
 ## }}}
 
 if [[ -a $HOME/.zshenv_local ]]
