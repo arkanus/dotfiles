@@ -3,6 +3,9 @@
 *.swo
 *.swn
 
+# OSX
+.DS_Store
+
 # Exhuberant ctags files
 /.tags
 /TAGS
