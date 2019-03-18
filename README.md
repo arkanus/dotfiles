@@ -19,3 +19,7 @@ Also uses Vundle, but it's included as a submodule :O
     ./install.sh
 
 This will also download and install all configured vim plugins using Vundle (yipee!)
+
+## karabiner elements
+
+The `karabiner.json` file goues under the `~/.config/karabiner/` directory.
