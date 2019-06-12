@@ -32,6 +32,7 @@ Plug 'vitapluvia/vim-gurl'
 Plug 'junegunn/vim-emoji'
 Plug 'sirtaj/vim-openscad'
 Plug 'craigemery/vim-autotag'
+Plug 'ciaranm/securemodelines'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -63,7 +64,6 @@ set backspace+=indent,start,eol
 syntax on
 set autoread "Automatically reload modified files
 set autoindent
-" set modeline=1
 set modelines=1
 set laststatus=2
 set cursorline
