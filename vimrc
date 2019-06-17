@@ -306,5 +306,8 @@ let g:neomake_error_sign = {
 
 " }}
 
+" Vim-Go {{
+let g:go_def_mode = 'godef'
+" }}
 
 let g:python_host_prog = '/usr/local/bin/python3'
