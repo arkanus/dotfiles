@@ -15,7 +15,7 @@ then
     export SSH_AUTH_SOCK=$SOCK
 fi
 
-path+=(/usr/local/bin)
+path+=(/usr/local/bin /usr/local/sbin)
 
 if [[ -d $HOME/go/bin ]]; then
 	path+=($HOME/go/bin)
