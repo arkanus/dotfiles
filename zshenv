@@ -21,6 +21,10 @@ if [[ -d $HOME/go/bin ]]; then
 	path+=($HOME/go/bin)
 fi
 
+if ["$WSDL_DISTRO_NAME" != ""]; then
+	export DOCKER_HOST="tcp://localhost:2375"
+fi
+
 ## Aliases  {{{
 
 # Fix key forwarding in stupid screen
