@@ -52,39 +52,7 @@ Plug 'honza/vim-snippets'
 
 call plug#end()
 " }}}
-
-" GUI tweaks {{{
-if $TERM =~ '256color'
-    colorscheme hydrangea
-else
-    colorscheme elflord
-endif
-
-if has("termguicolors")
-    set termguicolors
-endif
-
-set backspace+=indent,start,eol
-syntax on
-set autoread "Automatically reload modified files
-set autoindent
-set modelines=1
-set laststatus=2
-set cursorline
-" set ttym=xterm2 "make the mouse to work on iterm2 (osx)
-set mouse=a
-set visualbell
-set t_vb=
-"Avoid wait on the <ESC>O key combination
-set ttimeoutlen=100
-" Show character on line breaks
-let &showbreak="↪️ "
-" }}}
-
-" Airline {{{
-let airline_theme="kolor"
-" }}}
-
+"
 " General {{{
 set number
 set history=1000
@@ -129,8 +97,19 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+let g:python_host_prog = '/usr/local/bin/python3'
+
 "Encrypt
 " set cm=blowfish2
+" }}}
+
+" Enable Persistent Undo {{{
+if exists("&undodir")
+    set undofile
+    set undodir=$HOME/.vim/undo
+    set undolevels=1000
+    set undoreload=10000
+endif
 " }}}
 
 " Keyboard Mappings {{{
@@ -163,18 +142,36 @@ nnoremap <silent><Leader><C-]> <C-w><C-]><C-w>T
 
 " }}}
 
-" Neomake {{{
-:nnoremap <leader>ma :Neomake<cr>
-:nnoremap <leader>mm :Neomake!<cr>
+" GUI tweaks {{{
+if $TERM =~ '256color'
+    colorscheme hydrangea
+else
+    colorscheme elflord
+endif
+
+if has("termguicolors")
+    set termguicolors
+endif
+
+set backspace+=indent,start,eol
+syntax on
+set autoread "Automatically reload modified files
+set autoindent
+set modelines=1
+set laststatus=2
+set cursorline
+" set ttym=xterm2 "make the mouse to work on iterm2 (osx)
+set mouse=a
+set visualbell
+set t_vb=
+"Avoid wait on the <ESC>O key combination
+set ttimeoutlen=100
+" Show character on line breaks
+let &showbreak="↪️ "
 " }}}
 
-" Enable Persistent Undo {{{
-if exists("&undodir")
-    set undofile
-    set undodir=$HOME/.vim/undo
-    set undolevels=1000
-    set undoreload=10000
-endif
+" Airline {{{
+let airline_theme="kolor"
 " }}}
 
 " OmniCppComplete {{{
@@ -211,9 +208,6 @@ au FileType xml,html setlocal foldmethod=syntax
 
 "Abre todos los folds al abrir un archivo
 au BufRead * normal zR
-
-"crear tags para los archivos del directorio actual presionando <F12>
-au Filetype python map <F12> :!ctags -R --python-kinds=-i --languages=Python . <CR>
 
 " Scons is python!
 au BufRead,BufNewFile SCons* setfiletype python
@@ -289,19 +283,6 @@ let g:syntastic_style_warning_symbol = "▶︎"
 
 " Vim-gurl {{{
 noremap <leader>gu :call Gurl()<CR>
-" }}}
-
-" NeoMake {{{
-
-let g:neomake_warning_sign = {
-  \ 'text': '▶︎',
-  \ 'texthl': 'WarningMsg',
-  \ }
-let g:neomake_error_sign = {
-  \ 'text': '✖︎',
-  \ 'texthl': 'ErrorMsg',
-  \ }
-
 " }}}
 
 " Vim-Go {{{
@@ -406,8 +387,8 @@ omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
 " Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> <C-d> <Plug>(coc-range-select)
-xmap <silent> <C-d> <Plug>(coc-range-select)
+nmap <silent> <leader><C-d> <Plug>(coc-range-select)
+xmap <silent> <leader><C-d> <Plug>(coc-range-select)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
@@ -440,5 +421,3 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR> 
 
 " }}} EOC Conqueror of Completion
-
-let g:python_host_prog = '/usr/local/bin/python3'
