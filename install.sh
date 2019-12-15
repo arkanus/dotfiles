@@ -11,6 +11,10 @@ for file in $files; do
 	ln -s $DIR/$file ~/.$file
 done
 
+# Nvim specific
+mkdir -p $HOME/.config/nvim
+ln -s $DIR/vimrc $HOME/.config/nvim/init.vim
+
 #Installs the bundles configured in .vimr using Vundle
 vim +BundleInstall +qa
 
