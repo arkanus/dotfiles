@@ -120,12 +120,8 @@ nmap  <C-j> :cn<CR>
 map <Leader>h :set invhls <CR>
 " Toggle mouse input (useful for terminal emulator copy/paste)
 nnoremap <Leader>mo :call ToggleMouse()<cr>
-" Toggle paste mode (useful for terminal emulator copy/paste)
-nnoremap <Leader>p :set paste!<cr>
 " Toggle autoclose plugin
 nmap <silent> <Leader>c :AutoCloseToggle<cr>
-" Toggle line numbers
-nmap <silent> <Leader>n :set number!<cr>
 " Toggle NERDTree file explorer split
 nmap <Leader>3 :NERDTreeToggle<CR>
 " nmap <S-F3> :NERDTreeMirror<CR>
@@ -134,70 +130,9 @@ if &diff
     vnoremap < :diffget<CR>
     vnoremap > :diffput<CR>
 endif
-" comma to times for autocompletion
-inoremap <Leader>, <C-x><C-o>
 
 " jump to tag in new tab
 nnoremap <silent><Leader><C-]> <C-w><C-]><C-w>T
-
-" }}}
-
-" GUI tweaks {{{
-if $TERM =~ '256color'
-    colorscheme hydrangea
-else
-    colorscheme elflord
-endif
-
-if has("termguicolors")
-    set termguicolors
-endif
-
-set backspace+=indent,start,eol
-syntax on
-set autoread "Automatically reload modified files
-set autoindent
-set modelines=1
-set laststatus=2
-set cursorline
-" set ttym=xterm2 "make the mouse to work on iterm2 (osx)
-set mouse=a
-set visualbell
-set t_vb=
-"Avoid wait on the <ESC>O key combination
-set ttimeoutlen=100
-" Show character on line breaks
-let &showbreak="↪️ "
-" }}}
-
-" Airline {{{
-let airline_theme="kolor"
-" }}}
-
-" OmniCppComplete {{{
-let OmniCpp_ShowScopeInAbbr = 1
-" Opciones para autocompletación
-set completeopt=preview,menu,menuone,longest
-" Lineas en el popup de omnicomplete
-set pumheight=12
-"cerrar automágicamente la ventana de preview
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-" }}}
-
-" VIM-Emoji complete func {{{
-" trigger this with ctrl-x ctrl-u in insert mode
-set completefunc=emoji#complete
-" }}}
-
-" UltiSnips {{{
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-" }}}
-
-" NERDTree {{{
-" Ignore these files
-let NERDTreeIgnore = ['\.pyc','^tags','\.o','\.a','\.gch','^CMakeFiles','^CMakeCache.txt','^cmake_install.cmake']
 
 " }}}
 
@@ -221,6 +156,48 @@ autocmd BufReadPost * silent! lcd .
 
 " }}}
 
+" GUI tweaks {{{
+if $TERM =~ '256color'
+    colorscheme hydrangea
+else
+    colorscheme elflord
+endif
+
+if has("termguicolors")
+    set termguicolors
+endif
+
+set backspace+=indent,start,eol
+syntax on
+set autoread "Automatically reload modified files
+set autoindent
+set modelines=1
+set laststatus=2
+set cursorline
+set mouse=a
+set visualbell
+"Avoid wait on the <ESC>O key combination
+set ttimeoutlen=100
+" Show character on line breaks
+let &showbreak="↪️ "
+" }}}
+
+" Airline {{{
+let airline_theme="kolor"
+" }}}
+
+" UltiSnips {{{
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" }}}
+
+" NERDTree {{{
+" Ignore these files
+let NERDTreeIgnore = ['\.pyc','^tags','\.o','\.a','\.gch','^CMakeFiles','^CMakeCache.txt','^cmake_install.cmake']
+
+" }}}
+
 " CtrlP {{{
 " Ignore some files
 set wildignore+=*.pyc,*.swp,*.jpg,*.png,*.gif,*.o,*.so,*.gch
@@ -236,12 +213,6 @@ let g:ctrlp_lazy_update = 250
 let g:ctrlp_max_depth = 20
 " Disable max number of file to index
 let g:ctrlp_max_files = 0
-" }}}
-
-" Fugitive {{{
-" Adds git branch to the statusline
-"set statusline=%{fugitive#statusline()}
-set statusline=%{fugitive#statusline()}\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 " }}}
 
 " Pymode {{{
@@ -279,10 +250,6 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_style_error_symbol = "✖︎"
 let g:syntastic_style_warning_symbol = "▶︎"
-" }}}
-
-" Vim-gurl {{{
-noremap <leader>gu :call Gurl()<CR>
 " }}}
 
 " Vim-Go {{{
