@@ -21,7 +21,7 @@ if [[ -d $HOME/go/bin ]]; then
 	path+=($HOME/go/bin)
 fi
 
-if ["$WSDL_DISTRO_NAME" != ""]; then
+if [[ "$WSDL_DISTRO_NAME" != "" ]]; then
 	export DOCKER_HOST="tcp://localhost:2375"
 fi
 
@@ -75,7 +75,5 @@ if [[ -d $GOPATH/bin ]]; then
 fi
 
 #NVM stuff
-if [ -x /usr/local/opt/nvm/nvm.sh ]; then
-	export NVM_DIR="$HOME/.nvm"
-	. "/usr/local/opt/nvm/nvm.sh"
-fi
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
