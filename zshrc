@@ -7,7 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="miloshadzic"
+# ZSH_THEME="miloshadzic"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +51,7 @@ ZSH_THEME="miloshadzic"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git django docker docker-compose virtualenvwrapper)
+plugins=(git docker-compose npm nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -90,16 +90,7 @@ setopt appendhistory
 bindkey '^[[1;5C' emacs-forward-word
 bindkey '^[[1;5D' emacs-backward-word
 
-
-function dcp-bash {
-  CONTAINER_KEY=$1
-  CONTAINER_NAME=$(echo $(basename "$PWD") | sed 's/-//' )'_'$CONTAINER_KEY'_1'
-  docker exec -ti $CONTAINER_NAME bash
-}
-
-function docker-bash {
-	docker exec -ti $1 bash
-}
+eval "$(starship init zsh)"
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
