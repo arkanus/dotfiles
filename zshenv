@@ -68,7 +68,7 @@ if [ -x /usr/libexec/path_helper ]; then
 fi
 
 #required for octave plot commands, otherwise it segfaults
-export LIBGL_ALWAYS_INDIRECT=y
+# export LIBGL_ALWAYS_INDIRECT=y
 
 #Golang root
 export GOPATH=$HOME/go
