@@ -59,7 +59,7 @@ set history=1000
 set foldlevel=99        "Always unfold
 set colorcolumn=80        "Highlight column 80
 set showcmd
-set clipboard=unnamed    "Use system clipboard
+set clipboard=unnamedplus    "Use system clipboard
 set incsearch
 set ignorecase
 set smartcase            "Case sensitive search only when the term has mixed cases

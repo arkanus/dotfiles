@@ -16,7 +16,7 @@ mkdir -p $HOME/.config/nvim
 ln -s $DIR/vimrc $HOME/.config/nvim/init.vim
 
 #Installs the bundles configured in .vimr using Vundle
-vim +BundleInstall +qa
+nvim +BundleInstall +qa
 
 #Use only the snippets defined in snipmate-snippets
 if [ -d "$HOME/.vim/bundle/snipmate.vim/snippets" ]; then
