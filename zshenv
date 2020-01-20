@@ -79,3 +79,7 @@ fi
 #NVM stuff
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/share/nvm/nvm.sh" ] && . "/usr/share/nvm/nvm.sh"
+
+# GVM
+[[ -s "/home/marcos/.gvm/scripts/gvm" ]] && source "/home/marcos/.gvm/scripts/gvm"
