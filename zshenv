@@ -3,7 +3,9 @@ export LANG=en_US.UTF-8
 
 export ZSH_TMUX_AUTOCONNECT=true
 
-export EDITOR=vim
+export EDITOR=vi
+(which nvim > /dev/null) && export EDITOR=nvim > /dev/null
+(which vim > /dev/null) && export EDITOR=vim > /dev/null
 
 VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 
