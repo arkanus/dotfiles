@@ -32,6 +32,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Open Github for file
+Plug 'tyru/open-browser.vim'
+Plug 'tyru/open-browser-github.vim'
+
 " Python
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'jmcantrell/vim-virtualenv', {'for': 'python'}
@@ -59,7 +63,7 @@ set history=1000
 set foldlevel=99        "Always unfold
 set colorcolumn=80        "Highlight column 80
 set showcmd
-set clipboard=unnamedplus    "Use system clipboard
+set clipboard+=unnamedplus    "Use system clipboard
 set incsearch
 set ignorecase
 set smartcase            "Case sensitive search only when the term has mixed cases
@@ -97,7 +101,9 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-let g:python_host_prog = '/usr/local/bin/python3'
+" let g:python3_host_prog = string(system('which python3'))
+let g:loaded_python_provider = 0
+let g:python3_host_prog = '/usr/bin/python3'
 
 "Encrypt
 " set cm=blowfish2
@@ -388,3 +394,9 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR> 
 
 " }}} EOC Conqueror of Completion
+
+" tyru/open-browser-github.vim {{{
+let g:openbrowser_github_url_exists_check="ignore"
+xmap <silent> <leader>gh :'<,'>OpenGithubFile<cr><cr>
+nmap <silent> <leader>gh V:'<,'>OpenGithubFile<cr><cr>
+" }}}
