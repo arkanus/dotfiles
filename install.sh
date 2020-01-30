@@ -13,6 +13,8 @@ done
 
 # Nvim specific
 mkdir -p $HOME/.config/nvim
+mv $HOME/.config/nvim $HOME/.config/nvim.old
+ln -s $DIR/vim $HOME/.config/nvim
 ln -s $DIR/vimrc $HOME/.config/nvim/init.vim
 
 #Installs the bundles configured in .vimr using Vundle
