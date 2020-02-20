@@ -28,6 +28,7 @@ Plug 'sirtaj/vim-openscad'
 Plug 'craigemery/vim-autotag'
 Plug 'ciaranm/securemodelines'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'liuchengxu/vista.vim'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -49,6 +50,8 @@ Plug 'jodosha/vim-godebug', {'for': 'go'}
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'yuttie/hydrangea-vim'
 Plug 'skielbasa/vim-material-monokai'
+Plug 'mhartington/oceanic-next'
+Plug 'connorholyday/vim-snazzy'
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -163,14 +166,16 @@ autocmd BufReadPost * silent! lcd .
 " }}}
 
 " GUI tweaks {{{
-if $TERM =~ '256color'
-    colorscheme hydrangea
-else
-    colorscheme elflord
-endif
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 if has("termguicolors")
     set termguicolors
+endif
+
+if $TERM =~ '256color'
+    colorscheme OceanicNext
+else
+    colorscheme elflord
 endif
 
 set backspace+=indent,start,eol
@@ -189,7 +194,7 @@ let &showbreak="↪️ "
 " }}}
 
 " Airline {{{
-let airline_theme="kolor"
+let airline_theme="oceanicnext"
 " }}}
 
 " UltiSnips {{{
@@ -311,9 +316,12 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> ggd :vs<cr><Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+nmap <silent> gs :CocList symbols<cr>
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
