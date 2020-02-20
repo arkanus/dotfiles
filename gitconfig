@@ -5,14 +5,17 @@
 	sh = stash
 	lg = log --oneline --decorate
 	tree = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
-	logf = log --name-status
+	logf = log --stat
 	logu = log @{u}..
 	st = status -sb
 	diffc = diff --cached
 	n = number
 [user]
-	name = Marcos Sánchez
+	name = Marcos Sanchez
 	email = arkanus@gmail.com
+
+	# this is safe to be public https://security.stackexchange.com/questions/153579/is-it-safe-to-share-your-gitconfigs-user-signingkey-value-with-the-world
+	signkey = 66DD1A7
 [push]
 	default = tracking
 [color]
@@ -26,3 +29,7 @@
 	lineNumber = true
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[gpg]
+	program = gpg2
+[commit]
+	gpgsign = true
