@@ -76,6 +76,9 @@ if [[ -d $GOPATH/bin ]]; then
 	path+=($GOPATH/bin)
 fi
 
+# AWSP to change the AWS profile used
+alias awsp="source _awsp"
+
 #NVM stuff
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
