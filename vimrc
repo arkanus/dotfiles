@@ -265,6 +265,7 @@ let g:syntastic_style_warning_symbol = "▶︎"
 
 " Vim-Go {{{
 let g:go_def_mode = 'godef'
+let g:go_rename_command = 'gopls'
 " }}}
 
 " Conqueror of Completion {{{
