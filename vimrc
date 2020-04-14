@@ -52,6 +52,7 @@ Plug 'yuttie/hydrangea-vim'
 Plug 'skielbasa/vim-material-monokai'
 Plug 'mhartington/oceanic-next'
 Plug 'connorholyday/vim-snazzy'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -173,7 +174,7 @@ if has("termguicolors")
 endif
 
 if $TERM =~ '256color'
-    colorscheme OceanicNext
+    colorscheme dracula
 else
     colorscheme elflord
 endif
@@ -199,8 +200,8 @@ let airline_theme="oceanicnext"
 
 " UltiSnips {{{
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " }}}
 
 " NERDTree {{{
