@@ -17,21 +17,24 @@ Plug 'kien/ctrlp.vim'
 Plug 'othree/yajs.vim', {'for': 'javascript'}
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'scrooloose/syntastic'
-Plug 'sheerun/vim-polyglot' " lots syntax and languaje settings
+Plug 'sheerun/vim-polyglot' " lots syntax and language settings
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'tsaleh/vim-align'
+" Plug 'tsaleh/vim-align'
 " Plug 'vitapluvia/vim-gurl'
 " Plug 'junegunn/vim-emoji'
 Plug 'sirtaj/vim-openscad'
-Plug 'craigemery/vim-autotag'
+" Plug 'craigemery/vim-autotag'
 Plug 'ciaranm/securemodelines'
+
+" CoC stuff
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vista.vim'
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 
 " Open Github for file
 Plug 'tyru/open-browser.vim'
@@ -194,8 +197,10 @@ set ttimeoutlen=100
 let &showbreak="↪️ "
 " }}}
 
-" Airline {{{
-let airline_theme="oceanicnext"
+" LightLine {{{
+let g:lightline = {
+	\ 'colorscheme': 'one',
+\ }
 " }}}
 
 " UltiSnips {{{
