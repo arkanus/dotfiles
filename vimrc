@@ -11,55 +11,41 @@ set nocompatible
 filetype off
 call plug#begin('~/.vim/plugged')
 
-Plug 'b4b4r07/vim-hcl' " syntax for hashi-stuff
 Plug 'critiqjo/vim-autoclose'
-Plug 'kien/ctrlp.vim'
-Plug 'othree/yajs.vim', {'for': 'javascript'}
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot' " lots syntax and language settings
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-" Plug 'tsaleh/vim-align'
-" Plug 'vitapluvia/vim-gurl'
-" Plug 'junegunn/vim-emoji'
-Plug 'sirtaj/vim-openscad'
-" Plug 'craigemery/vim-autotag'
 Plug 'ciaranm/securemodelines'
-
-" CoC stuff
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'liuchengxu/vista.vim'
-
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/lightline.vim'
 
-" Open Github for file
-Plug 'tyru/open-browser.vim'
-Plug 'tyru/open-browser-github.vim'
-
-" Python
-Plug 'davidhalter/jedi-vim', {'for': 'python'}
-Plug 'jmcantrell/vim-virtualenv', {'for': 'python'}
-Plug 'klen/python-mode', {'for': 'python'}
+" Langs
+Plug 'othree/yajs.vim', {'for': 'javascript'}
+Plug 'sirtaj/vim-openscad'
+Plug 'b4b4r07/vim-hcl' " syntax for hashi-stuff
 
 " Golang
 Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'jodosha/vim-godebug', {'for': 'go'}
 
-" Colorschemes
-Plug 'tyrannicaltoucan/vim-quantum'
-Plug 'yuttie/hydrangea-vim'
-Plug 'skielbasa/vim-material-monokai'
-Plug 'mhartington/oceanic-next'
-Plug 'connorholyday/vim-snazzy'
+
+" Fuzzy finder using fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" CoC stuff
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'liuchengxu/vista.vim'
+
+" Colorschemes {{{
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'whatyouhide/vim-gotham',  {  'as': 'gotham' }
+" }}}
 
 " Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 
 call plug#end()
 " }}}
@@ -67,29 +53,34 @@ call plug#end()
 " General {{{
 set number
 set history=1000
-set foldlevel=99        "Always unfold
-set colorcolumn=80        "Highlight column 80
+set foldlevel=99					"Always unfold
+set colorcolumn=80					"Highlight column 80
 set showcmd
-set clipboard+=unnamedplus    "Use system clipboard
+set clipboard+=unnamedplus			"Use system clipboard
 set incsearch
 set ignorecase
-set smartcase            "Case sensitive search only when the term has mixed cases
-set wrap
+set smartcase
+set nowrap
 set linebreak
-"Only save tabs, split sizes and current dir on :mksession
-"Excludes hidden buffers
-set sessionoptions=tabpages,winsize,curdir
 set lazyredraw
-set scrolloff=3            "Always show at least 3 lines above/below cursor
-set wildmenu
+set scrolloff=3 	"Always show at least 3 lines above/below cursor
 set tabstop=4
 set shiftwidth=4
 set nosmartindent
-set tags+=./tags,~/.vim/tags,~/.vim/tags.php "Global tag files
-set diffopt+=vertical    "Use vertical splits on diffs
+set backspace+=indent,start,eol
+set autoread "Automatically reload modified files
+set autoindent
+set modelines=1
+set laststatus=2
+set cursorline
+set mouse=a
+set visualbell
 
-set backupdir=~/.vim/backup,.,/tmp
-set directory=~/.vim/backup,.,/tmp
+set ttimeoutlen=100 "Avoid wait on the <ESC>O key combination
+
+set nobackup
+set undofile
+set undodir=$HOME/.vim/undo
 
 " Applies filetype plugins
 filetype plugin on
@@ -108,21 +99,6 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-" let g:python3_host_prog = string(system('which python3'))
-let g:loaded_python_provider = 0
-let g:python3_host_prog = '/usr/bin/python3'
-
-"Encrypt
-" set cm=blowfish2
-" }}}
-
-" Enable Persistent Undo {{{
-if exists("&undodir")
-    set undofile
-    set undodir=$HOME/.vim/undo
-    set undolevels=1000
-    set undoreload=10000
-endif
 " }}}
 
 " Keyboard Mappings {{{
@@ -147,25 +123,9 @@ endif
 " jump to tag in new tab
 nnoremap <silent><Leader><C-]> <C-w><C-]><C-w>T
 
-" }}}
-
-" Autocommands {{{
-" Use folding on XMLs
-let g:xml_syntax_folding=1
-au FileType xml,html setlocal foldmethod=syntax
-
-"Abre todos los folds al abrir un archivo
-au BufRead * normal zR
-
-" Scons is python!
-au BufRead,BufNewFile SCons* setfiletype python
-
-" SaltStack States are YAML
-au BufRead,BufNewFile *.sls setfiletype yaml
-
-" don't show full path when opening files relative path
-" sometimes popening files with tree explorer or opening a dir causes this
-autocmd BufReadPost * silent! lcd .
+" fzf search
+nnoremap <C-p> :Files<cr>
+nnoremap <C-g> :GFiles<cr>
 
 " }}}
 
@@ -177,22 +137,11 @@ if has("termguicolors")
 endif
 
 if $TERM =~ '256color'
-    colorscheme dracula
+    colorscheme gotham
 else
     colorscheme elflord
 endif
 
-set backspace+=indent,start,eol
-syntax on
-set autoread "Automatically reload modified files
-set autoindent
-set modelines=1
-set laststatus=2
-set cursorline
-set mouse=a
-set visualbell
-"Avoid wait on the <ESC>O key combination
-set ttimeoutlen=100
 " Show character on line breaks
 let &showbreak="↪️ "
 " }}}
@@ -215,60 +164,6 @@ let NERDTreeIgnore = ['\.pyc','^tags','\.o','\.a','\.gch','^CMakeFiles','^CMakeC
 
 " }}}
 
-" CtrlP {{{
-" Ignore some files
-set wildignore+=*.pyc,*.swp,*.jpg,*.png,*.gif,*.o,*.so,*.gch
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/](\.git$\|\.hg$\|\.svn$\|cache$\|log$\|ninja_build$\|regress_final|node_modules|bower_components)$',
-    \ 'file': '\.exe$\|\.so$\|\.dll$',
-    \ 'link': '',
-    \ }
-let g:ctrlp_extensions = ['tag', 'buffertag']
-" Only start searching when input stop (in ms)
-let g:ctrlp_lazy_update = 250
-" Max depth to search files
-let g:ctrlp_max_depth = 20
-" Disable max number of file to index
-let g:ctrlp_max_files = 0
-" }}}
-
-" Pymode {{{
-" python mode dont show error window
-let g:pymode_lint_cwindow = 0
-let g:pymode_lint_write = 0
-" don't add line numbers & other predefined stuff
-let g:pymode_options_other = 0
-" Dont fold python code when opening a file
-let g:pymode_folding = 0
-let g:pymode_rope_regenerate_on_write = 0
-" let g:pymode_rope_guess_project = 0
-
-" Disable python linting, prefer syntastic
-let g:pymode_lint=0
-
-" Override go-to.definition key shortcut to Ctrl-]
-let g:pymode_rope_goto_definition_bind = "<C-]>"
-let g:pymode_rope_goto_definition_cmd = 'e'
-" }}}
-
-" Syntastic {{{
-" include some standard cpp header locations
-let g:syntastic_c_include_dirs=['src', 'src/include']
-let g:syntastic_cpp_include_dirs=['src', 'src/include']
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "active_filetypes": [],
-    \ "passive_filetypes": ["go"] }
-
-" Python
-let g:syntastic_python_python_exec = '/usr/local/bin/python3'
-let g:syntastic_python_checkers = ['flake8']
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_style_error_symbol = "✖︎"
-let g:syntastic_style_warning_symbol = "▶︎"
-" }}}
-
 " Vim-Go {{{
 let g:go_def_mode = 'godef'
 let g:go_rename_command = 'gopls'
@@ -278,10 +173,6 @@ let g:go_rename_command = 'gopls'
 
 " if hidden is not set, TextEdit might fail.
 set hidden
-
-" Some servers have issues with backup files, see #649
-set nobackup
-set nowritebackup
 
 " Better display for messages
 set cmdheight=2
@@ -409,9 +300,3 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR> 
 
 " }}} EOC Conqueror of Completion
-
-" tyru/open-browser-github.vim {{{
-let g:openbrowser_github_url_exists_check="ignore"
-xmap <silent> <leader>gh :'<,'>OpenGithubFile<cr><cr>
-nmap <silent> <leader>gh V:'<,'>OpenGithubFile<cr><cr>
-" }}}
