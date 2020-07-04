@@ -51,7 +51,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker-compose npm nvm dotenv zsh-autosuggestions vi-mode)
+plugins=(docker-compose npm nvm dotenv zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,3 +101,7 @@ eval "$(starship init zsh)"
 
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=grey,bg=bold,underline"
+
+# I put this here instead of .zshenv because of  the loading order
+# see: https://shreevatsa.wordpress.com/2008/03/30/zshbash-startup-files-loading-order-bashrc-zshrc-etc/
+alias ls=lsd

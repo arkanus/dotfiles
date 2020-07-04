@@ -29,8 +29,8 @@ fi
 
 ## Aliases  {{{
 
-# Fix key forwarding in stupid screen
-alias fixssh="source ~/fixssh"
+# lsd provides cool icons and colors for ls
+(which lsd > /dev/null) && alias ls='lsd' > /dev/null
 
 # Docker Compose
 alias dkr='docker'
