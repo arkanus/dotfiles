@@ -29,8 +29,9 @@ fi
 
 ## Aliases  {{{
 
-# lsd provides cool icons and colors for ls
-(which lsd > /dev/null) && alias ls='lsd' > /dev/null
+# xclip shortcuts to pipe stuff in/out of clipboard
+alias xcopy='xclip -i -selection c'
+alias xpaste='xclip -o -selection c'
 
 # Docker Compose
 alias dkr='docker'

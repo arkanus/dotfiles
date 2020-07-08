@@ -43,14 +43,11 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'whatyouhide/vim-gotham',  {  'as': 'gotham' }
 " }}}
 
-" Snippets
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
-
 call plug#end()
 " }}}
-"
+
 " General {{{
+
 set number
 set history=1000
 set foldlevel=99					"Always unfold
@@ -82,6 +79,15 @@ set nobackup
 set undofile
 set undodir=$HOME/.vim/undo
 
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+if has("termguicolors")
+    set termguicolors
+endif
+
+" Show character on line breaks
+let &showbreak="↪️ "
+
 " Applies filetype plugins
 filetype plugin on
 " Applies indentation options specified in ftplugins
@@ -90,6 +96,8 @@ filetype plugin indent on
 let mapleader = ","
 "Syntaxis coloreada
 syntax on
+
+colorscheme gotham
 
 " Hightlight trailing whitespaces on lines
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -102,6 +110,7 @@ autocmd BufWinLeave * call clearmatches()
 " }}}
 
 " Keyboard Mappings {{{
+
 " Next/Prev quickfix mappings
 nmap  <C-k> :cp<CR>
 nmap  <C-j> :cn<CR>
@@ -129,33 +138,10 @@ nnoremap <C-g> :GFiles<cr>
 
 " }}}
 
-" GUI tweaks {{{
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-if has("termguicolors")
-    set termguicolors
-endif
-
-if $TERM =~ '256color'
-    colorscheme gotham
-else
-    colorscheme elflord
-endif
-
-" Show character on line breaks
-let &showbreak="↪️ "
-" }}}
-
 " LightLine {{{
 let g:lightline = {
 	\ 'colorscheme': 'one',
 \ }
-" }}}
-
-" UltiSnips {{{
-let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<c-b>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " }}}
 
 " NERDTree {{{

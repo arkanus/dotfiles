@@ -104,4 +104,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=grey,bg=bold,underline"
 
 # I put this here instead of .zshenv because of  the loading order
 # see: https://shreevatsa.wordpress.com/2008/03/30/zshbash-startup-files-loading-order-bashrc-zshrc-etc/
-alias ls=lsd
+alias ll='lsd -lh'
+alias l='lsd'
+alias la='lsd -lha'
