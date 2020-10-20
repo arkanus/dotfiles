@@ -11,9 +11,8 @@ set nocompatible
 filetype off
 call plug#begin('~/.vim/plugged')
 
-Plug 'critiqjo/vim-autoclose'
+Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'sheerun/vim-polyglot' " lots syntax and language settings
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -21,6 +20,7 @@ Plug 'ciaranm/securemodelines'
 Plug 'itchyny/lightline.vim'
 
 " Langs
+Plug 'sheerun/vim-polyglot' " lots syntax and language settings
 Plug 'othree/yajs.vim', {'for': 'javascript'}
 Plug 'sirtaj/vim-openscad'
 Plug 'b4b4r07/vim-hcl' " syntax for hashi-stuff
@@ -118,21 +118,11 @@ nmap  <C-j> :cn<CR>
 map <Leader>h :set invhls <CR>
 " Toggle mouse input (useful for terminal emulator copy/paste)
 nnoremap <Leader>mo :call ToggleMouse()<cr>
-" Toggle autoclose plugin
-nmap <silent> <Leader>c :AutoCloseToggle<cr>
-" Toggle NERDTree file explorer split
-nmap <Leader>3 :NERDTreeToggle<CR>
-" nmap <S-F3> :NERDTreeMirror<CR>
-" Easy diff lines put/get
-if &diff
-    vnoremap < :diffget<CR>
-    vnoremap > :diffput<CR>
-endif
-
 " jump to tag in new tab
 nnoremap <silent><Leader><C-]> <C-w><C-]><C-w>T
+" }}}
 
-" fzf search
+" FZF {{{
 nnoremap <C-p> :Files<cr>
 nnoremap <C-g> :GFiles<cr>
 
