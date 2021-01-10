@@ -18,6 +18,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'ciaranm/securemodelines'
 Plug 'itchyny/lightline.vim'
+Plug 'drewtempelmeyer/palenight.vim'
 
 " Langs
 Plug 'sheerun/vim-polyglot' " lots syntax and language settings
