@@ -51,7 +51,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(docker-compose npm nvm dotenv zsh-autosuggestions)
+plugins=(docker-compose npm nvm dotenv pyenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,3 +107,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=grey,bg=bold,underline"
 alias ll='lsd -lh'
 alias l='lsd'
 alias la='lsd -lha'
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
