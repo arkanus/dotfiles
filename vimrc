@@ -19,6 +19,7 @@ Plug 'tpope/vim-surround'
 Plug 'ciaranm/securemodelines'
 Plug 'itchyny/lightline.vim'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'voldikss/vim-floaterm'
 
 " Langs
 Plug 'sheerun/vim-polyglot' " lots syntax and language settings
@@ -292,3 +293,9 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR> 
 
 " }}} EOC Conqueror of Completion
+
+" floaterm {{{
+noremap  <leader>t  :FloatermToggle<CR>
+noremap! <leader>t  <Esc>:FloatermToggle<CR>
+tnoremap <leader>t  <C-\><C-n>:FloatermToggle<CR>
+" }}}
