@@ -49,7 +49,7 @@ call plug#end()
 
 " General {{{
 
-set number
+set number relativenumber
 set history=1000
 set foldlevel=99					"Always unfold
 set colorcolumn=80					"Highlight column 80
@@ -97,8 +97,9 @@ filetype plugin indent on
 let mapleader = ","
 "Syntaxis coloreada
 syntax on
+syntax sync minlines=10000 " prevents breaking syntax on large files
 
-colorscheme gotham
+colorscheme dracula
 
 " Hightlight trailing whitespaces on lines
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -117,6 +118,9 @@ nmap  <C-k> :cp<CR>
 nmap  <C-j> :cn<CR>
 " Toggle search result highlighting
 map <Leader>h :set invhls <CR>
+map <Leader>n :set number!<cr>
+map <Leader>nn :set relativenumber!<cr>
+map <Leader>nd :set norelativenumber nonumber<cr>
 " Toggle mouse input (useful for terminal emulator copy/paste)
 nnoremap <Leader>mo :call ToggleMouse()<cr>
 " jump to tag in new tab
@@ -127,11 +131,22 @@ nnoremap <silent><Leader><C-]> <C-w><C-]><C-w>T
 nnoremap <C-p> :Files<cr>
 nnoremap <C-g> :GFiles<cr>
 
+" terminal mode
+tnoremap <esc> <c-\><c-n>
+tnoremap <esc><esc> <esc>
+
 " }}}
 
 " LightLine {{{
 let g:lightline = {
-	\ 'colorscheme': 'one',
+  \ 'colorscheme': 'one',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'FugitiveHead'
+  \ },
 \ }
 " }}}
 

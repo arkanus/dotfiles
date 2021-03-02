@@ -1,5 +1,5 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": ["python", "css", "go"],
+    "coc.preferences.formatOnSaveFiletypes": [ "css", "go"],
 
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
