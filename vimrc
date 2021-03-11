@@ -12,7 +12,6 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'jiangmiao/auto-pairs'
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -80,6 +79,9 @@ set ttimeoutlen=100 "Avoid wait on the <ESC>O key combination
 set nobackup
 set undofile
 set undodir=$HOME/.vim/undo
+
+" netrw
+let g:netrw_liststyle=3
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
@@ -149,12 +151,6 @@ let g:lightline = {
   \   'gitbranch': 'FugitiveHead'
   \ },
 \ }
-" }}}
-
-" NERDTree {{{
-" Ignore these files
-let NERDTreeIgnore = ['\.pyc','^tags','\.o','\.a','\.gch','^CMakeFiles','^CMakeCache.txt','^cmake_install.cmake']
-
 " }}}
 
 " Vim-Go {{{
