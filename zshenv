@@ -5,8 +5,8 @@ export ZSH_TMUX_AUTOCONNECT=true
 export MANPAGER="nvim -c 'set ft=man' -"
 
 export EDITOR=vi
-(which nvim > /dev/null) && export EDITOR=nvim > /dev/null
 (which vim > /dev/null) && export EDITOR=vim > /dev/null
+(which nvim > /dev/null) && export EDITOR=nvim > /dev/null
 
 VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 
