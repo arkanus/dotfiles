@@ -20,6 +20,10 @@ Plug 'itchyny/lightline.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'voldikss/vim-floaterm'
 
+" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 " Langs
 Plug 'sheerun/vim-polyglot' " lots syntax and language settings
 Plug 'othree/yajs.vim', {'for': 'javascript'}
@@ -156,6 +160,12 @@ let g:lightline = {
 " Vim-Go {{{
 let g:go_def_mode = 'godef'
 let g:go_rename_command = 'gopls'
+" }}}
+
+" UltiSnip {{{
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 " }}}
 
 " Conqueror of Completion {{{
