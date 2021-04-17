@@ -30,11 +30,19 @@ end
 vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile'
 
 return require('packer').startup(function(use)
-    use {'wbthomason/packer.nvim', opt=true}
+    -- use 'wbthomason/packer.nvim'
 
-    use 'Th3Whit3Wolf/one-nvim'
+    -- use {'sonph/onehalf', rtp="vim", opt=true, as="onehalf"}
+    use 'tomasr/molokai'
+    -- use 'Th3Whit3Wolf/one-nvim'
+    -- use 'drewtempelmeyer/palenight.vim'
+
     use 'jiangmiao/auto-pairs'
 
     use 'neovim/nvim-lspconfig'
     use 'kabouzeid/nvim-lspinstall'
+
+    use 'itchyny/lightline.vim'
+    use 'tpope/vim-fugitive'
+
 end)
