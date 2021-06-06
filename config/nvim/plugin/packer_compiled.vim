@@ -40,6 +40,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcos/.local/share/nvim/site/pack/packer/start/lightline.vim"
   },
+  molokai = {
+    loaded = true,
+    path = "/home/marcos/.local/share/nvim/site/pack/packer/start/molokai"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/marcos/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
@@ -48,17 +52,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcos/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
-  ["one-nvim"] = {
+  ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/marcos/.local/share/nvim/site/pack/packer/start/one-nvim"
+    path = "/home/marcos/.local/share/nvim/site/pack/packer/start/plenary.nvim"
   },
-  ["packer.nvim"] = {
+  ["popup.nvim"] = {
     loaded = true,
-    path = "/home/marcos/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/home/marcos/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
-  ["palenight.vim"] = {
+  ["telescope.nvim"] = {
     loaded = true,
-    path = "/home/marcos/.local/share/nvim/site/pack/packer/start/palenight.vim"
+    path = "/home/marcos/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
   ["vim-fugitive"] = {
     loaded = true,
