@@ -5,6 +5,9 @@ local function setKeyMaps(maps)
 end
 
 setKeyMaps {
-    "nmap <c-j> :cnext<cr>",
-    'nmap <c-k> :cprev<cr>',
+    "nmap <leader>j :cnext<cr>",
+    'nmap <leader>k :cprev<cr>',
+
+    'nmap <c-j> :bnext<cr>',
+    'nmap <c-k> :bprev<cr>',
 }
