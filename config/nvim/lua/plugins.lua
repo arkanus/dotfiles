@@ -45,4 +45,13 @@ return require('packer').startup(function(use)
     use 'itchyny/lightline.vim'
     use 'tpope/vim-fugitive'
 
+    -- All this for telescope
+    use 'nvim-lua/popup.nvim'
+    use 'nvim-lua/plenary.nvim'
+    use 'nvim-telescope/telescope.nvim'
+
+    -- plugin configs
+    require('plugconf.telescope')
+
 end)
+
