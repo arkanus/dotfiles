@@ -3,7 +3,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
     signs = true,
     underline = true,
     update_in_insert = true,
-    virtual_text = false,
+    virtual_text = true,
 
     -- put virtual text into quickfix list
     -- replaced by <leader>ll mapping
@@ -32,14 +32,17 @@ buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
 local function setup_servers()
     require'lspinstall'.setup()
-    local servers = require'lspinstall'.installed_servers()
-    for _, server in pairs(servers) do
-        
-        require'lspconfig'[server].setup{on_attach = require('lsp').on_attach}
-    end
+
+    -- Default config for new servers
+
+    -- local servers = require'lspinstall'.installed_servers()
+    -- for _, server in pairs(servers) do
+    --     require'lspconfig'[server].setup{on_attach = require('lsp').on_attach}
+    -- end
 
     -- Load specific server configs
     require("lsp.csharp")
+    require("lsp.lua")
 end
 
 setup_servers()

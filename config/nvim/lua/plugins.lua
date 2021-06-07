@@ -35,7 +35,7 @@ return require('packer').startup(function(use)
     -- use {'sonph/onehalf', rtp="vim", opt=true, as="onehalf"}
     use 'tomasr/molokai'
     -- use 'Th3Whit3Wolf/one-nvim'
-    -- use 'drewtempelmeyer/palenight.vim'
+    use 'drewtempelmeyer/palenight.vim'
 
     use 'jiangmiao/auto-pairs'
 
