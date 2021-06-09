@@ -3,7 +3,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
     signs = true,
     underline = true,
     update_in_insert = true,
-    virtual_text = true,
+    virtual_text = false,
 
     -- put virtual text into quickfix list
     -- replaced by <leader>ll mapping

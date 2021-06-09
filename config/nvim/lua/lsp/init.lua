@@ -25,7 +25,7 @@ function lsp_module.on_attach(client, bufnr)
     buf_set_keymap('n', '<leader>ll', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
     buf_set_keymap('n', '<leader>lca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 
-    -- vim.api.nvim_exec('autocmd CursorHold <buffer> lua vim.lsp.diagnostic.show_line_diagnostics()', false)
+    vim.api.nvim_exec('autocmd CursorHold <buffer> lua vim.lsp.diagnostic.show_line_diagnostics({focusable = false})', false)
 end
 
 return lsp_module
