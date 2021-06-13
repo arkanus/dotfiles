@@ -54,6 +54,6 @@ return require('packer').startup(function(use)
 
     -- plugin configs
     require('plugconf.telescope')
-
+    require('plugconf.lightline')
 end)
 
